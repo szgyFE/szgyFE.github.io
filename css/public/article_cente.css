@@ -1,0 +1,225 @@
+#article h1,
+#article h2,
+#article h3,
+#article h4,
+#article h5,
+#article h6 {
+  position: relative;
+  font-weight: 600;
+  outline: none;
+  color: #12183A;
+  cursor: pointer;
+}
+#article h1 {
+  font-size: 32px;
+  font-weight: 900;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e06c75;
+}
+#article h1 a:hover {
+  border-bottom: 0;
+}
+#article h2 {
+  font-size: 25px;
+  border-left: 3px solid #73b1e0;
+  padding-left: 10px;
+}
+#article h1,
+#article h2 {
+  line-height: 40px;
+  margin: 20px 0 15px;
+}
+#article h3 {
+  padding: 24px 0;
+  font-size: 24px;
+}
+#article h4 {
+  font-size: 19px;
+  padding: 15px 0 10px;
+}
+#article h5 {
+  font-size: 18px;
+  padding: 15px 0 10px;
+}
+#article a {
+  position: relative;
+  color: #006aff;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+}
+#article hr {
+  margin: 24px 0 32px;
+  height: 4px;
+  border: none;
+  background: #F1F5FB;
+}
+#article code {
+  border-radius: 8px;
+}
+#article code li {
+  list-style: none;
+}
+#article img {
+  width: 100%;
+  cursor: pointer;
+  margin: 8px 0 0;
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+}
+#article pre {
+  font-size: 0.85em;
+  line-height: 1.5em;
+  display: flex;
+  max-width: 1000px;
+  position: relative;
+}
+#article pre:after {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fc625d;
+  -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: ' ';
+}
+#article pre code {
+  flex: 1;
+  text-align: left;
+  width: fit-content;
+  padding: 40px 20px 20px 20px;
+  margin: 20px 0;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+#article p {
+  display: block;
+  margin: 4px 0 16px;
+  line-height: 30px;
+  text-align: justify;
+  font-size: 18px;
+  color: #12183A;
+  box-sizing: border-box;
+}
+#article ol {
+  padding: 10px 30px;
+}
+#article ol li {
+  margin-left: 15px;
+  padding: 7px;
+}
+#article ul {
+  margin: 5px 0;
+}
+#article ul li {
+  list-style: none;
+  margin: 10px 16px;
+  line-height: 30px;
+}
+#article ul li:before {
+  content: "\2022";
+  color: #006aff;
+  float: left;
+  margin-right: 10px;
+  line-height: 31px;
+  font-size: 18px;
+  font-weight: 500;
+}
+#article blockquote {
+  background: #fafafa;
+  border-left: 4px solid #e0e2e5;
+  margin: 15px 0;
+  padding: 2px;
+}
+#article blockquote p {
+  margin: 4px 20px;
+  font-weight: 400;
+  color: #898FA0;
+  font-size: 16px;
+}
+#article p code,
+#article ul li code {
+  font-size: 1em;
+  margin: 0 4px;
+  display: inline;
+  padding: 6px 8px;
+  font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  color: #58586C;
+  background: #F1F5FB;
+  border-radius: 3px;
+}
+#article p strong {
+  font-weight: bold;
+}
+#article table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 0 2px #d4d4d4;
+  word-wrap: break-word;
+  table-layout: fixed;
+  margin: 20px 0 15px;
+  border: 1px solid rgba(153, 169, 191, 0.1);
+  overflow: hidden;
+}
+#article table td:hover,
+#article table tr:hover {
+  background: rgba(153, 169, 191, 0.1);
+  cursor: pointer;
+}
+#article table tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+#article table tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+#article table tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+#article table tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+#article table td {
+  border-bottom: 1px solid rgba(153, 169, 191, 0.1);
+  border-right: 1px solid rgba(153, 169, 191, 0.1);
+}
+#article table tr:first-child td {
+  border-top: 1px solid rgba(153, 169, 191, 0.1);
+}
+#article table tr td:first-child {
+  border-left: 1px solid rgba(153, 169, 191, 0.1);
+}
+#article thead {
+  text-indent: 1em;
+}
+#article thead tr {
+  height: 3em;
+}
+#article thead tr:nth-child(odd) {
+  background: hsla(0, 0%, 96.5%, 0.51);
+}
+#article thead th {
+  background: rgba(153, 169, 191, 0.1);
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  color: #4c4948;
+}
+#article tbody tr {
+  line-height: 2.5em;
+}
+#article tbody td {
+  color: #333;
+  font-weight: 400;
+  padding: 0 1em;
+  text-align: left;
+}

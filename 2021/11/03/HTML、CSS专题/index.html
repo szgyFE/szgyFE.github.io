@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>HTML、CSS专题-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/szgyFE/css/index.css">
+
+
+<meta name="keywords" content="前端面试题,前端学习笔记,Quiet主题">
+<meta name="description" content="描述">
+
+
+<script src="/szgyFE/js/jquery.min.js"></script>
+
+
+<script src="/szgyFE/js/index.js"></script>
+
+
+<script src="/szgyFE/js/fancybox.umd.js"></script>
+
+
+<script src="/szgyFE/js/fancybox-images.js"></script>
+
+
+<script src="/szgyFE/js/gitalk.min.js"></script>
+
+
+<script src="/szgyFE/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/szgyFE/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>szgy</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/szgyFE/Front-end-Interview-Notes">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img"
+    style="background: url('https://api.ixiaowai.cn/gqapi/gqapi.php')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+        </ul>
+        
+        <h1>HTML、CSS专题</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                        <path
+                            d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                            p-id="2902" fill="#ffffff"></path>
+                    </svg>
+                    
+                <span class="post-header-info-author-text"> <a href="../../about">szgy</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                </div>
+                <p>2021-11-03 19:44:30</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href='#1'>一、对BFC的了解</a></p>
+<p><a href='#2'>二、css哪些属性可以继承</a></p>
+<p><a href='#3'>三、水平垂直居中方式</a></p>
+<p><a href='#4'>四、flex弹性盒子是什么</a></p>
+<p><a href='#5'>五、 flex属性 0 1 auto</a></p>
+<p><a href='#6'>六、px、em、rem、vw、%</a></p>
+<p><a href='#7'>七、画一条 0.5px 的线或者说写一个字体大小小于12px的</a></p>
+<p><a href='#8'>八、<code>DOMContentLoaded </code>事件和 Load 事件的区别？</a></p>
+<p><a href='#9'>九、<code>localstorage</code>、<code>sessionstorage</code>、<code>cookie</code>的区别</a></p>
+<p><a href='#10'>十、CSS预处理器</a></p>
+<p><a href='#11'>一、阐述一下 CSS Sprites（雪碧图）</a></p>
+<p><a href='#12'>十二、外边距塌陷</a></p>
+<p><a  href='#13'>十三、文本溢出</a></p>
+<p><a  href='#14'>十四、 移除inline-block间隙</a></p>
+<p><a  href='#15'>十五、伪类和伪元素</a></p>
+<p><a  href='#16'>十六、offsetHight、scrollHeight 、clientHight</a></p>
+<p><a  href='#17'>十七、清除浮动的几种方式及原理？</a></p>
+<p><a  href='#18'>十八、说说position定位</a></p>
+<p><a  href='#19'>十九、说说IE盒模型与标准盒模型</a></p>
+<p><a  href='#20'>二十、CSS优先级（权重的计算）</a></p>
+<p><a  href='#21'>二十一、实现一个两边固定中间自适应的布局</a></p>
+<p><a  href='#22'>二十二、CSS 中 link 和@import 的区别？</a></p>
+<p><a  href='#23'>二十三、分析比较 opacity: 0、visibility: hidden、display: none 优劣和适用场景</a></p>
+<p><a  href='#24'>二十四、HTMLCollection 和NodeList的区别?</a></p>
+<p><a  href='#25'>二十五、<code>localstorage</code>、<code>sessionstorage</code>、<code>cookie</code>的区别?</a></p>
+<h2 id="一、对BFC的了解"><a href="#一、对BFC的了解" class="headerlink" title="一、对BFC的了解"></a><a name='1'>一、对BFC的了解</a></h2><h4 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h4><ul>
+<li>即块格式化上下文，简单来说就是，<code>BFC</code>是一个完全独立的空间（布局环境），让空间里的子元素不会影响到外面的布局。那么怎么使用<code>BFC</code>呢，<code>BFC</code>可以看做是一个<code>CSS</code>元素属性</li>
+</ul>
+<h4 id="2、触发（创建条件）"><a href="#2、触发（创建条件）" class="headerlink" title="2、触发（创建条件）"></a>2、触发（创建条件）</h4><ul>
+<li>根元素，也就是HTML标签</li>
+<li>浮动</li>
+<li>overflow的值不为 visible，为 auto、scroll、hidden</li>
+<li>display的值为<code>inline-block</code>、<code>inltable-cell</code>、table-caption、table、<code>inline-table</code>、flex、<code>inline-flex</code>、grid、<code>inline-grid</code></li>
+<li>position的值为absolute或fixed</li>
+</ul>
+<h4 id="3、应用场景"><a href="#3、应用场景" class="headerlink" title="3、应用场景"></a>3、应用场景</h4><ul>
+<li><p>防止外边距重叠</p>
+<ul>
+<li>问题：当两个上下的盒子都设置了外边距margin时，就会出现外边距重叠的问题，他们两个之间的margin距离会以大的那个大的margin为准（而不是两个margin值相加）</li>
+<li>解决方法：给其中一个盒子包在一个BFC盒子里面（给这个盒子设置<code>overflow:hidden</code>），这样他们属于两个BFC，会互不影响</li>
+</ul>
+</li>
+<li><p>使用Float脱离文档流，高度塌陷的</p>
+<ul>
+<li><p>问题：内容浮动父盒子高度会消失</p>
+</li>
+<li><p>解决方法：给父盒子触发BFC，这样他们属于两个BFC，会互不影响</p>
+</li>
+</ul>
+</li>
+<li><p>两栏布局覆盖</p>
+<ul>
+<li>问题：两栏布局中，给前一个盒子设置浮动，后一个盒子不设置浮动，那么前一个盒子会因为脱离文档流覆盖在后一个盒子的上方</li>
+<li>解决方法：可以把第二个盒子触发BFC</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、css哪些属性可以继承"><a href="#二、css哪些属性可以继承" class="headerlink" title="二、css哪些属性可以继承"></a><a name='2'>二、css哪些属性可以继承</a></h2><pre><code>（1）字体系列属性
+font、font-family、font-weight、font-size、font-style、font-variant、font-stretch、font-size-adjust
+
+（2）文本系列属性
+text-indent、text-align、text-shadow、line-height、word-spacing、letter-spacing、
+text-transform、direction、color
+
+（3）表格布局属性
+caption-side border-collapse empty-cells
+
+（4）列表属性
+list-style-type、list-style-image、list-style-position、list-style
+
+（5）光标属性
+cursor
+
+（6）元素可见性
+visibility
+</code></pre>
+<pre><code>答：每一个属性在定义中都给出了这个属性是否具有继承性，一个具有继承性的属性会在没有指定值的时候，会使用父元素的同属性的值
+来作为自己的值。
+
+一般具有继承性的属性有，字体相关的属性，font-size和font-weight等。文本相关的属性，color和text-align等。
+表格的一些布局属性、列表属性如list-style等。还有光标属性cursor、元素可见性visibility。
+
+当一个属性不是继承属性的时候，我们也可以通过将它的值设置为inherit来使它从父元素那获取同名的属性值来继承。
+</code></pre>
+<h2 id="三、水平垂直居中方式"><a href="#三、水平垂直居中方式" class="headerlink" title="三、水平垂直居中方式"></a><a name='3'>三、水平垂直居中方式</a></h2><h4 id="1、水平垂直居中方式一"><a href="#1、水平垂直居中方式一" class="headerlink" title="1、水平垂直居中方式一"></a>1、水平垂直居中方式一</h4><ul>
+<li><p><code>position</code>和<code>tansform</code>结合起来</p>
+<pre><code class="js">/*未知容器的宽高，利用`transform`属性*/
+div &#123;
+  position: absolute; /*相对定位或绝对定位均可*/
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: pink; /*方便看效果*/
+&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="2、水平垂直居中方式二"><a href="#2、水平垂直居中方式二" class="headerlink" title="2、水平垂直居中方式二"></a>2、水平垂直居中方式二</h4><ul>
+<li><p>弹性盒子<code>flex</code></p>
+<pre><code class="js">/*利用flex布局实际使用时应考虑兼容性*/
+.container &#123;
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+&#125;
+.containerdiv &#123;
+  width: 100px;
+  height: 100px;
+  background-color: pink; /*方便看效果*/
+&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="3、水平垂直居中方式三"><a href="#3、水平垂直居中方式三" class="headerlink" title="3、水平垂直居中方式三"></a>3、水平垂直居中方式三</h4><ul>
+<li><p>定位<code>position</code>结合<code>calc</code></p>
+<pre><code class="js">.wp &#123;
+    position: relative;
+&#125;
+.box &#123;
+    position: absolute;;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="4、水平垂直居中方式四"><a href="#4、水平垂直居中方式四" class="headerlink" title="4、水平垂直居中方式四"></a>4、水平垂直居中方式四</h4><ul>
+<li><p><code>position</code>结合<code>margin：auto</code></p>
+<pre><code class="js">         .son&#123;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            &#125;
+</code></pre>
+</li>
+</ul>
+<h2 id="四、flex弹性盒子是什么"><a href="#四、flex弹性盒子是什么" class="headerlink" title="四、flex弹性盒子是什么"></a><a name='4'>四、flex弹性盒子是什么</a></h2><pre><code class="js">flex布局是CSS3新增的一种布局方式，我们可以通过将一个元素的display属性值设置为flex从而使它成为一个flex
+容器，它的所有子元素都会成为它的项目。
+
+一个容器默认有两条轴，一个是水平的主轴，一个是与主轴垂直的交叉轴。我们可以使用flex-direction来指定主轴的方向。
+我们可以使用justify-content来指定元素在主轴上的排列方式，使用align-items来指定元素在交叉轴上的排列方式。还
+可以使用flex-wrap来规定当一行排列不下时的换行方式。
+
+对于容器中的项目，我们可以使用order属性来指定项目的排列顺序，还可以使用flex-grow来指定当排列空间有剩余的时候，
+项目的放大比例。还可以使用flex-shrink来指定当排列空间不足时，项目的缩小比例。
+</code></pre>
+<h2 id="五、-flex属性-0-1-auto-分别表示什么"><a href="#五、-flex属性-0-1-auto-分别表示什么" class="headerlink" title="五、 flex属性 0 1 auto 分别表示什么"></a><a name='5'>五、 flex属性 0 1 auto 分别表示什么</a></h2><ul>
+<li><p>flex-grow 当还有剩余空间时，为有该属性子元素按比例分配剩余空间。默认：0.    <code>flex：1</code>也就相当于<code>flex-group：1</code></p>
+</li>
+<li><p>flex-shrink 当子元素的宽度超出父元素时，包含该属性的子元素按比例减去超出的宽度。默认：1.</p>
+</li>
+<li><p>flex-basic 指定元素的宽度，优先级高于width</p>
+<pre><code class="js">flex-grow: 0 项目在主轴上的放大比例，0表示不放大
+flex-shrink: 1 项目在主轴方向的收缩比例。1 表示超出空间全部收缩（不会超出容器了）
+flex-basis: auto 项目在主轴上的初始大小。auto是项目本身大小
+</code></pre>
+</li>
+</ul>
+<h2 id="六、px、em、rem、vw、"><a href="#六、px、em、rem、vw、" class="headerlink" title="六、px、em、rem、vw、%"></a><a name='6'>六、px、em、rem、vw、%</a></h2><ul>
+<li><p>px：固定单位</p>
+</li>
+<li><p>%：% 是相对于父元素的大小设定的比率</p>
+</li>
+<li><p>em：相对单位，相对于父元素的字体大小，如果父元素为16px，1em就是16px</p>
+</li>
+<li><p>rem：相对单位，相对于根元素（HTML）的字体大小，根元素字体的大小也是动态获取当前视口宽度的十分之一</p>
+</li>
+<li><p>vw&#x2F;vh是一个动态值，相当于百分比值，1vw&#x2F;1vh相当于屏幕宽度&#x2F;高度的1%，</p>
+</li>
+</ul>
+<h2 id="七、画一条-0-5px-的线或者说写一个字体大小小于12px的"><a href="#七、画一条-0-5px-的线或者说写一个字体大小小于12px的" class="headerlink" title="七、画一条 0.5px 的线或者说写一个字体大小小于12px的"></a><a name='7'>七、画一条 0.5px 的线或者说写一个字体大小小于12px的</a></h2><pre><code class="js">采用transform:scale()的方式
+</code></pre>
+<h2 id="八、DOMContentLoaded-事件和-Load-事件的区别？"><a href="#八、DOMContentLoaded-事件和-Load-事件的区别？" class="headerlink" title="八、DOMContentLoaded 事件和 Load 事件的区别？"></a><a name='8'>八、<code>DOMContentLoaded </code>事件和 Load 事件的区别？</a></h2><pre><code class="js"> 当初始的 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样式表、图像和
+ 子框架的加载完成。
+
+ Load 事件是当所有资源加载完成后触发的。
+</code></pre>
+<h2 id="九、localstorage、sessionstorage、cookie的区别-浏览器"><a href="#九、localstorage、sessionstorage、cookie的区别-浏览器" class="headerlink" title="九、localstorage、sessionstorage、cookie的区别(浏览器)"></a><a name='9'>九、<code>localstorage</code>、<code>sessionstorage</code>、<code>cookie</code>的区别(浏览器)</a></h2><h4 id="1、存储大小不同"><a href="#1、存储大小不同" class="headerlink" title="1、存储大小不同"></a>1、存储大小不同</h4><ul>
+<li><code>localstorage</code>和<code>sessionstorage</code>的最大存储空间为5M，cookie的最大存储空间为4k</li>
+</ul>
+<h4 id="2、生命周期不同"><a href="#2、生命周期不同" class="headerlink" title="2、生命周期不同"></a>2、生命周期不同</h4><ul>
+<li><code>localstorage</code>存储的数据是永久性的，除非人为删除</li>
+<li><code>cookie</code>存储的数据在有效时间之前一直有效，时间过了就无效了</li>
+<li><code>sessionstorage</code>存储的数据在关闭页面会话（关闭标签页）之后就会被清除</li>
+</ul>
+<h4 id="3、数据共享不同"><a href="#3、数据共享不同" class="headerlink" title="3、数据共享不同"></a>3、数据共享不同</h4><ul>
+<li><code>localstorage</code> 和<code>cookie</code>在所有同源窗口共享</li>
+<li><code>sessionstorage </code>只能在当前会话标签共享</li>
+</ul>
+<h2 id="十、CSS预处理器"><a href="#十、CSS预处理器" class="headerlink" title="十、CSS预处理器"></a><a name='10'>十、CSS预处理器</a></h2><pre><code class="js">预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less csssprite，增强了css代码的复用性，还有层级、mixin、
+变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。
+</code></pre>
+<h2 id="十一、阐述一下-CSS-Sprites（雪碧图）"><a href="#十一、阐述一下-CSS-Sprites（雪碧图）" class="headerlink" title="十一、阐述一下 CSS Sprites（雪碧图）"></a><a name='11'>十一、阐述一下 CSS Sprites（雪碧图）</a></h2><pre><code class="js">css sprites：精灵图(雪碧图)：把一堆小图片整合在一张大图上，通过css背景图片相关设置(背景图片、背景图是否重复、背景图定位)，显示图片，减轻服务器对图片的请求数量
+</code></pre>
+<h2 id="十二、外边距塌陷"><a href="#十二、外边距塌陷" class="headerlink" title="十二、外边距塌陷"></a><a name='12'>十二、外边距塌陷</a></h2><h4 id="1、发生情况"><a href="#1、发生情况" class="headerlink" title="1、发生情况"></a>1、发生情况</h4><ul>
+<li><p>同级下上相邻的div一个设置下面的设置margin-top，上面的盒子设置margin-botton 实际他们直接的距离只会取较大的那个值</p>
+</li>
+<li><p>嵌套的父子结构的div，如果父子都设置margin-top，那么两个盒子会一起移动，实际移动的距离也是较大的那个值</p>
+</li>
+</ul>
+<h4 id="2、解决方法"><a href="#2、解决方法" class="headerlink" title="2、解决方法"></a>2、解决方法</h4><ul>
+<li>行内块元素 inline-block 不会发生外边距折叠，包括同层级和嵌套元素。</li>
+<li>浮动 float 元素不会发生外边距折叠，包括同层级和嵌套元素。</li>
+<li>绝对定位元素 absolute 不会发生外边距折叠，包括同层级和嵌套元素。</li>
+<li>创建了 BFC 的元素不会和它的子元素发生外边距折叠。</li>
+<li>父子嵌套的情况也可以给父盒子设置border，或者padding</li>
+</ul>
+<h2 id="十三、文本溢出"><a href="#十三、文本溢出" class="headerlink" title="十三、文本溢出"></a><a name='13'>十三、文本溢出</a></h2><ul>
+<li><p><strong>单行文本溢出</strong></p>
+<pre><code class="html">            overflow: hidden;
+            /* 既然是单行文本,就不能换行 */
+            white-space: nowrap;
+            /* 文本溢出的部分,用省略号来代替 */
+            text-overflow: ellipsis;
+</code></pre>
+</li>
+<li><p><strong>多行文本溢出</strong></p>
+<pre><code class="html">-webkit-line-clamp: 2;（用来限制在一个块元素显示的文本的行数，2 表示最多显示 2 行。为了实现该效果，它需要组合其他的 WebKit 属性）
+
+display: -webkit-box;（和 1 结合使用，将对象作为弹性伸缩盒子模型显示 ）
+
+-webkit-box-orient: vertical;（和 1 结合使用 ，设置或检索伸缩盒对象的子元素的排列方式 ）
+
+overflow: hidden;（文本溢出限定的宽度就隐藏内容）
+
+text-overflow: ellipsis;（多行文本的情况下，用省略号 “…” 隐藏溢出范围的文本)
+</code></pre>
+</li>
+</ul>
+<h2 id="十四、-移除inline-block间隙"><a href="#十四、-移除inline-block间隙" class="headerlink" title="十四、 移除inline-block间隙"></a><a name='22'>十四、 移除inline-block间隙</a></h2><ul>
+<li><p><strong>问题</strong></p>
+<pre><code class="js">在CSS中，当我们将多个行内块元素并排时，会发现同行显示的inline-block元素之间会出现空隙。
+</code></pre>
+</li>
+<li><p><strong>出现问题原因</strong></p>
+<pre><code class="js">当使用行内元素排版时，元素之间的符号都会被浏览器渲染，其中就包括换行符和空格，根据 white-space 的处理方式（默认时normal，合并多余空格）会将HTML中回车符换行符转换成空白符，在字体不为0的情况下，会占据空间，这也是我们所看到的 inline-block 元素之间的间隙。
+</code></pre>
+</li>
+<li><p>解决方法</p>
+<pre><code class="js">1.删除元素之间的换行符和空格
+2.父元素设置 font-size 为0，子元素设置正确的 font-size
+</code></pre>
+</li>
+</ul>
+<h2 id="十五、伪类和伪元素"><a href="#十五、伪类和伪元素" class="headerlink" title="十五、伪类和伪元素"></a><a name='15'>十五、伪类和伪元素</a></h2><ul>
+<li>伪类和伪元素用于修饰一些不在文档树中的信息</li>
+<li>伪类用于文档树中已存在的元素处于某个状态时，给它添加样式，这个状态根据用户行为而定（如 :hover）</li>
+<li>伪元素用于创建一些不在文档树中的元素并设置样式，可以通过这些元素给DOM元素的某些部分设置样式，但是实际这些伪<br>元素并没有真正存在文档树中，只是用户能看到这些元素而已(如 ::before）</li>
+</ul>
+<h2 id="十六、offsetHight、scrollHeight-、clientHight"><a href="#十六、offsetHight、scrollHeight-、clientHight" class="headerlink" title="十六、offsetHight、scrollHeight 、clientHight"></a><a name='16'>十六、offsetHight、scrollHeight 、clientHight</a></h2><ul>
+<li><p><code>offsetHight：border +padding +content</code></p>
+</li>
+<li><p><code>clientHeight ：border +padding</code></p>
+</li>
+<li><p><code>scrollHeight：padding +实际内容高度</code>（如：当前这个盒子里有个比这个盒子大的盒子，就产生了滚动条，那么实际内容高度就为里面那个盒子的高度+padding）</p>
+</li>
+<li><p>相关 </p>
+<ul>
+<li><p><code>scrollTop</code>、<code>scrollLeft</code> ：<code>元素.scrollTop</code>：元素被卷去的头部，<code>元素.scrollLeft</code>: 元素被卷去的左侧距离</p>
+</li>
+<li><p><code>widow.scrollTo（x，y</code>）:滚动到指定坐标</p>
+</li>
+<li><pre><code class="js">widow.scroll(&#123; //滚动到指定坐标
+    top：0//返回顶部
+    behavior：smooth//平滑滚动
+    &#125;)	//接收一个对象
+</code></pre>
+</li>
+<li><p><code>offsetTop</code>:获取元素到最近带有定位的父元素的距离，如果没有则相对于body（只读属性，不能设置）</p>
+</li>
+<li><p>获取页面被卷去的高度</p>
+<ul>
+<li><code>doument.documentElement.scrollTop</code>：返回值是一个数字 ：卷去的数值</li>
+<li><code>widow.pageYoffset</code>(但是这个属性不能修改，只能获取)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="十七、清除浮动的几种方式及原理？"><a href="#十七、清除浮动的几种方式及原理？" class="headerlink" title="十七、清除浮动的几种方式及原理？"></a><a name='17'>十七、清除浮动的几种方式及原理？</a></h2><pre><code class="js">答：清除浮动主要是为了解决父盒子里的子盒子浮动导致父盒子高度塌陷为0的问题
+方法：
+1、直接给父盒子添加高度
+2、添加一个空标签 并设置clear：both
+3、创建BFC：给父盒子设置overflow：hidden或者auto
+4、使用after伪元素清楚浮动
+5、使用before和after双伪元素清楚浮动
+</code></pre>
+<p>清除浮动的方法：</p>
+<h4 id="1、父级div定义-height"><a href="#1、父级div定义-height" class="headerlink" title="1、父级div定义 height"></a>1、父级div定义 height</h4><ul>
+<li><p>原理：父级div有了固定的height，就解决了无法获取到高度的问题。</p>
+</li>
+<li><p>优点：简单、代码少。</p>
+</li>
+<li><p>缺点：只适合已知高度的布局</p>
+</li>
+</ul>
+<h4 id="2、使用空标签清除浮动clear-both"><a href="#2、使用空标签清除浮动clear-both" class="headerlink" title="2、使用空标签清除浮动clear:both"></a>2、使用空标签清除浮动clear:both</h4><ul>
+<li><p>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度</p>
+</li>
+<li><p>优点：简单、代码少、浏览器支持好</p>
+</li>
+<li><p>缺点：如果页面浮动布局多，就要增加很多空div（添加无意义标签，语义化差，所以不建议使用。）</p>
+<pre><code class="js">.clear &#123;    clear: both;&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="3、-创建BFC就可以包含住浮动的子元素"><a href="#3、-创建BFC就可以包含住浮动的子元素" class="headerlink" title="3、 创建BFC就可以包含住浮动的子元素"></a>3、 创建BFC就可以包含住浮动的子元素</h4><ul>
+<li><p>使用<code>overflow</code>的方法（<code>hidden</code>和<code>auto</code>都可以实现）</p>
+<pre><code class="js">.father &#123;    overflow: hidden;&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="4、伪类元素-after清除浮动（推荐使用）"><a href="#4、伪类元素-after清除浮动（推荐使用）" class="headerlink" title="4、伪类元素::after清除浮动（推荐使用）"></a>4、伪类元素::after清除浮动（推荐使用）</h4><ul>
+<li><p>添加一个不可见但占位置的块级元素，然后清除掉所有的浮动；</p>
+</li>
+<li><p>优点：符合闭合浮动思想，结构语义化正确</p>
+</li>
+<li><p>缺点：ie6-7不支持伪元素：after，使用zoom:1触发hasLayout。</p>
+<pre><code class="js">.clearfix::after &#123;   
+    content: &quot;&quot;;    
+    display: block;    
+    height: 0;    
+    visibility: hidden;    
+    clear: both;
+&#125;
+/* ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行 */
+.clearfix &#123;    zoom: 1;&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="5、-双伪类元素-after和-before清除浮动（推荐使用）"><a href="#5、-双伪类元素-after和-before清除浮动（推荐使用）" class="headerlink" title="5、 双伪类元素:after和:before清除浮动（推荐使用）"></a>5、 双伪类元素:after和:before清除浮动（推荐使用）</h4><ul>
+<li><p>原理与单伪元素清除浮动一样；</p>
+<pre><code class="js"> /* 使用：after和:before双伪元素清除浮动 */ 
+.clearfix::after, .clearfix::before &#123;     
+    content: &quot;&quot;;     
+    display: table; 
+&#125;
+.clearfix::after &#123;     
+    clear: both; 
+&#125; 
+.clearfix &#123;     
+    *zoom: 1; 
+&#125;
+</code></pre>
+</li>
+</ul>
+<h2 id="十八、position定位"><a href="#十八、position定位" class="headerlink" title="十八、position定位"></a><a name='18'>十八、position定位</a></h2><ul>
+<li>static ： 默认值，静态定位</li>
+<li>relative ： 相对定位，即相对于元素的正常位置进行定位</li>
+<li>absolute：绝对定位，相对于第一个非 static 定位的父级元素进行定位</li>
+<li>fixed： 固定定位，相对于浏览器窗口进行定位</li>
+<li>sticky： 粘性定位，它是 relative 和 fixed 的结合体，能够实现类似吸附的效果</li>
+</ul>
+<h2 id="十九、说说IE盒模型与标准盒模型"><a href="#十九、说说IE盒模型与标准盒模型" class="headerlink" title="十九、说说IE盒模型与标准盒模型"></a><a name='19'>十九、说说IE盒模型与标准盒模型</a></h2><p>有两种盒子模型：IE盒模型（border-box）、W3C标准盒模型（content-box）</p>
+<p>盒模型又称框模型（Box Model）,包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）四个部分。</p>
+<ul>
+<li><p>W3C<strong>标准盒模型</strong></p>
+<pre><code class="js">属性width，height只包含内容content，不包含border和padding
+也就是说我们设置的宽高对应的是盒子的content内容的宽高
+盒子实际的宽或高 = 我们设置的宽或高+padding+border
+</code></pre>
+</li>
+<li><p>IE<strong>盒模型</strong></p>
+<pre><code class="js">属性width，height包含content、border和padding，指的是content
++padding+border。
+也就是说我们设置的宽高就是盒子实际的宽高，我们设置的宽高包= content+padding+border= 盒子实际的宽高
+
+我们可以用box-sizing属性（css3属性）将默认的值content-box改为border-box;也就是将标准盒模型转化为IE盒模型
+</code></pre>
+</li>
+</ul>
+<h2 id="二十、CSS优先级（权重的计算）"><a href="#二十、CSS优先级（权重的计算）" class="headerlink" title="二十、CSS优先级（权重的计算）"></a><a name='20'>二十、CSS优先级（权重的计算）</a></h2><pre><code class="js">!important 的权重最高
+内联样式，如: style=&quot;...&quot;，权值为1000。
+id选择器，如: #content，权值为0100。
+类，伪类、属性选择器，如.content，权值为0010。
+标签选择器、伪元素选择器，如div ， 权值为0001。
+通配符、子选择器、相邻选择器等。如*，&gt;， +，权值为0000.
+继承的样式没有权重 为最低
+
+⚠注意：计算不能进位
+</code></pre>
+<h2 id="二十一、实现一个两边固定中间自适应的布局"><a href="#二十一、实现一个两边固定中间自适应的布局" class="headerlink" title="二十一、实现一个两边固定中间自适应的布局"></a><a name='21'>二十一、实现一个两边固定中间自适应的布局</a></h2><h4 id="1、利用定位实现两侧固定中间自适应"><a href="#1、利用定位实现两侧固定中间自适应" class="headerlink" title="1、利用定位实现两侧固定中间自适应"></a>1、利用定位实现两侧固定中间自适应</h4><ul>
+<li><p>父盒子设置左右 padding 值</p>
+</li>
+<li><p>padding的值为左右两个盒子的宽度，使得左右两个盒子分别定位在父盒子的padding处</p>
+</li>
+<li><p>中间盒子自适应</p>
+<pre><code class="js">html结构：
+&lt;div class=&quot;father&quot;&gt;
+ &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;center&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+css：
+&lt;style&gt;
+ .father &#123;
+ height: 400px;
+ background-color: pink;
+ position: relative;
+ padding: 0 200px;
+ &#125;
+ .left,.right &#123;
+ width: 200px;
+ height: 300px;
+ background-color: yellow;
+ position: absolute;
+ top: 0;
+ &#125;
+ .left &#123;
+ left: 0;
+ &#125;
+ .right &#123;
+ right: 0;
+ &#125;
+ .center &#123;
+ background-color: blue;
+ height: 350px;
+ &#125;
+&lt;/style&gt;
+</code></pre>
+</li>
+</ul>
+<h4 id="2、利用-flex-布局实现两侧固定中间自适应"><a href="#2、利用-flex-布局实现两侧固定中间自适应" class="headerlink" title="2、利用 flex 布局实现两侧固定中间自适应"></a>2、利用 flex 布局实现两侧固定中间自适应</h4><ul>
+<li>父盒子设置 display:flex;</li>
+<li>左右盒子设置固定宽高</li>
+<li>中间盒子设置 flex:1 ;</li>
+</ul>
+<h4 id="3、利用-bfc-块级格式化上下文-实现两侧固定中间自适应"><a href="#3、利用-bfc-块级格式化上下文-实现两侧固定中间自适应" class="headerlink" title="3、利用 bfc 块级格式化上下文, 实现两侧固定中间自适应"></a>3、利用 bfc 块级格式化上下文, 实现两侧固定中间自适应</h4><ul>
+<li><p>左右盒子固定宽高，进行浮动</p>
+</li>
+<li><p>中间 overflow: hidden;</p>
+</li>
+<li><p>注意这里在html结构中中间的盒子要写在两边两个盒子的后面</p>
+<pre><code class="js">&lt;div class=&quot;father&quot;&gt;
+ &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+ &lt;div class=&quot;center&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 注意:left 和 right 必须放在 center 前面 --&gt;
+&lt;style&gt;
+ .father &#123;
+ height: 500px;
+ background-color: pink;
+ &#125;
+ .left &#123;
+ float: left;
+ width: 200px;
+ height: 400px;
+ background-color: blue;
+ &#125;
+ .right &#123;
+ float: right;
+ width: 200px;
+ height: 400px;
+ background-color: blue;
+ &#125;
+ .center &#123;
+ height: 450px;
+ background-color: green;
+ overflow: hidden;
+ &#125;
+ &lt;/style&gt;     
+</code></pre>
+</li>
+</ul>
+<h2 id="二十二、CSS-中-link-和-import-的区别？"><a href="#二十二、CSS-中-link-和-import-的区别？" class="headerlink" title="二十二、CSS 中 link 和@import 的区别？"></a><a name='22'>二十二、CSS 中 link 和@import 的区别？</a></h2><ul>
+<li>link是XHTML标签，除了加载CSS外，还可以定义RSS连接属性、引入网站标签等；@import属于CSS范畴，只能加载CSS。</li>
+<li>link引用CSS时，在页面载入时同时加载；@import引入的CSS将在页面加载完毕后被加载。</li>
+<li>link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。</li>
+<li>link支持使用Javascript控制DOM去改变样式；而@import不支持。</li>
+</ul>
+<h2 id="二十三、分析比较-opacity-0、visibility-hidden、display-none-优劣和适用场景"><a href="#二十三、分析比较-opacity-0、visibility-hidden、display-none-优劣和适用场景" class="headerlink" title="二十三、分析比较 opacity: 0、visibility: hidden、display: none 优劣和适用场景"></a><a name='23'>二十三、分析比较 opacity: 0、visibility: hidden、display: none 优劣和适用场景</a></h2><ul>
+<li>opacity&#x3D;0，元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑定一些事件，如click 事件，那么点击该区域，也能触发点击事件的；</li>
+<li>visibility&#x3D;hidden，元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件；</li>
+<li>display&#x3D;none，元素隐藏起来l，并且会改变页面布局，可以理解成在页面中把该元素删除掉一样。</li>
+</ul>
+<h2 id="二十四、HTMLCollection-和NodeList的区别"><a href="#二十四、HTMLCollection-和NodeList的区别" class="headerlink" title="二十四、HTMLCollection 和NodeList的区别?"></a><a name='24'>二十四、HTMLCollection 和NodeList的区别?</a></h2><ul>
+<li><p>node是最顶层的节点 ，包含了document、element、以及文本和注释节点</p>
+</li>
+<li><p>element是元素节点的集合，而HTMLCollection 继承于element</p>
+</li>
+<li><p>HTMLCollection是元素的集合</p>
+</li>
+<li><p>NodeList 是node的集合</p>
+</li>
+<li><p>上述这两个是伪数组</p>
+</li>
+</ul>
+<p>例子：elem.childNodes获取的是子node节点，包括了文本、注释、元素</p>
+<p>而      elem.children 获取的是所有子元素  也就是元素节点，如div span 这些</p>
+<h2 id="二十五、localstorage、sessionstorage、cookie的区别"><a href="#二十五、localstorage、sessionstorage、cookie的区别" class="headerlink" title="二十五、localstorage、sessionstorage、cookie的区别"></a><a name='25'>二十五、<code>localstorage</code>、<code>sessionstorage</code>、<code>cookie</code>的区别</a></h2><h4 id="1、存储大小不同-1"><a href="#1、存储大小不同-1" class="headerlink" title="1、存储大小不同"></a>1、存储大小不同</h4><ul>
+<li><code>localstorage</code>和<code>sessionstorage</code>的最大存储空间为5M，cookie的最大存储空间为4k</li>
+</ul>
+<h4 id="2、生命周期不同-1"><a href="#2、生命周期不同-1" class="headerlink" title="2、生命周期不同"></a>2、生命周期不同</h4><ul>
+<li><code>localstorage</code>存储的数据是永久性的，除非人为删除</li>
+<li><code>cookie</code>存储的数据在有效时间之前一直有效，时间过了就无效了</li>
+<li><code>sessionstorage</code>存储的数据在关闭页面会话（关闭标签页）之后就会被清除</li>
+</ul>
+<h4 id="3、数据共享不同-1"><a href="#3、数据共享不同-1" class="headerlink" title="3、数据共享不同"></a>3、数据共享不同</h4><ul>
+<li><code>localstorage</code> 和<code>cookie</code>在所有同源窗口共享</li>
+<li><code>sessionstorage </code>只能在当前会话标签共享</li>
+</ul>
+
+  </div>
+  <div id="gitalk-container"></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/szgyFE/2023/01/03/hello-world/">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>Hello World</p>
+        </div>
+    </a>
+    
+
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2023 By szgy. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/szgyFE/Front-end-Interview-Notes">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/szgyFE/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
