@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://github.com/szgyFE/atom.xml" rel="self"/>
+  <link href="https://szgyfe.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/szgyFE/"/>
+  <link href="https://szgyfe.github.io/"/>
   <updated>2023-01-03T07:46:11.837Z</updated>
-  <id>https://github.com/szgyFE/</id>
+  <id>https://szgyfe.github.io/</id>
   
   <author>
     <name>szgy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/szgyFE/2023/01/03/hello-world/"/>
-    <id>https://github.com/szgyFE/2023/01/03/hello-world/</id>
+    <link href="https://szgyfe.github.io/2023/01/03/hello-world/"/>
+    <id>https://szgyfe.github.io/2023/01/03/hello-world/</id>
     <published>2023-01-03T07:46:11.837Z</published>
     <updated>2023-01-03T07:46:11.837Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>HTML、CSS专题</title>
-    <link href="https://github.com/szgyFE/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/"/>
-    <id>https://github.com/szgyFE/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/</id>
+    <link href="https://szgyfe.github.io/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/"/>
+    <id>https://szgyfe.github.io/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/</id>
     <published>2021-11-03T11:44:30.000Z</published>
     <updated>2023-01-03T12:02:15.948Z</updated>
     
