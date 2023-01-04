@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>test-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+<meta name="keywords" content="hexo主题,hexo扁平化主题,Quiet主题">
+<meta name="description" content="描述">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>Joey</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img"
+    style="background: url('https://api.ixiaowai.cn/gqapi/gqapi.php')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+        </ul>
+        
+        <h1>test</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                        <path
+                            d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                            p-id="2902" fill="#ffffff"></path>
+                    </svg>
+                    
+                <span class="post-header-info-author-text"> <a href="../../about">Joey</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                </div>
+                <p>2023-01-04 18:50:44</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <h1 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h1><ol>
+<li>对 Typescript 有个基本认知</li>
+<li>学习 typescript 基本语法</li>
+<li>见识 typescript 类型体操（通过对类型进行编程，加强团队协作）</li>
+</ol>
+<p>typescript 是针对 <strong>团队协作，第三方开发，架构设计</strong>，</p>
+<p>前几天学习底层知识（js 体系，值和引用，闭包，发布订阅，this，面向对象，事件循环，多线程），把功能实现</p>
+<p>今天开始，顶层设计（ts 顶层设计，SOA，依赖注入，微前端），项目要写的足够大，（adword，facebook）</p>
+<h2 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h2><pre><code class="javascript">取值1，复制一份，给到 a （引用），1 放在栈，a 放在堆，a 是包装对象，简单数据对象
+let a = 1; // 取值1，复制一份，给到 a （引用），1 放在栈，a 放在堆，a 是包装对象，简单数据对象
+let b = &#123; value: 1 &#125;; // 堆中创建对象，取地址值，复制一份，给到 b (引用)，b 复杂数据对象
+
+// : 左边是堆中引用，右边堆中值
+// 函数实参：取值，函数形参：堆中引用
+// . 号是取引用操作
+</code></pre>
+<h2 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h2><p>原始类型 - js 简单数据类型</p>
+<p>给引用添加说明：引用值，必须是这个类型的</p>
+<pre><code class="typescript">let a: number = 1;
+
+let b: string = &quot;123123&quot;;
+
+let c: boolean = true;
+
+// 字面量类型
+let d: null = null;
+let e: undefined = undefined;
+
+let f: symbol = Symbol();
+
+let g: bigInt = BigInt();
+
+// ts 反射，在实际代码中，ts 的类型，是真的绑在对象上的
+// a.toString() a 上是有类型标注的
+</code></pre>
+<ol>
+<li><p><strong>类型</strong>是小写，js 基础数据<strong>类</strong>，Number，String，Boolean，null，undefined，Symbol，BigInt，除了 null 和 undefined，都是大写</p>
+</li>
+<li><p>类型有数据放在包装对象上的</p>
+</li>
+<li><p>基本数据类型，除了 null 和 undefined，都是直接<strong>小写作为类型注解</strong></p>
+</li>
+</ol>
+<h2 id="为什么要用-ts"><a href="#为什么要用-ts" class="headerlink" title="为什么要用 ts"></a>为什么要用 ts</h2><ol>
+<li>在 js 开发中：<code>Uncaught TypeError</code></li>
+</ol>
+<pre><code class="javascript">let a = 1;
+a(); // Uncaught TypeError: a is not a function
+
+let b = &#123; value: 1 &#125;;
+b.value.c.d.e.f;
+// Uncaught TypeError: Cannot read properties of undefined (reading &#39;d&#39;)
+// 没有被 try catch 处理的类型错误：无法读取 undefined 的属性（读取 b）
+b.value.c?.d?.e?.f; // 可选链 optional chain
+
+b.value.c?.()?.[] // ?.() 可选函数调用 ?.[] 可选的数组访问
+
+function optionalChain() &#123;
+  if (b.value.c) &#123;
+    let data = b.value.c;
+    if (data.d) &#123;
+      let dataD = data.d;
+      if (dataD.e) &#123;
+        // ..
+      &#125; else &#123;
+        return undefined;
+      &#125;
+    &#125; else &#123;
+      return undefined;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="2">
+<li>js 中，存在隐式的类型转换</li>
+</ol>
+<p>大量出现的话，无法调试</p>
+<pre><code class="javascript">[&quot;5&quot; - 3, &quot;5&quot; + 3]; // [2, &#39;53&#39;] + 号引用于字符串拼接，是否拼接是看是否出现了字符串
+
+&#39;foo&#39;++&#39;foo&#39; // ++ 是个运算符，无法应用于 x ++ x
+&#39;foo&#39; + + &#39;foo&#39; // 两个运算符 + +, 先计算  +&#39;foo&#39; 取值（NaN）之后，再进行 &#39;foo&#39; + 结果（&#39;fooNaN&#39;）
+
+let x= 3;
+[&#39;5&#39;+x-x, &#39;5&#39;-x+x] // [50, 5]
+</code></pre>
+<ol start="3">
+<li>JS 存在运算符优先级</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">mdn 运算符优先级</a></p>
+<pre><code class="typescript">let m = 1;
+let n = true;
+let o = m + (n ? 1 : 0); // 避免js 的隐式类型转换 + 优先级 12，三元 优先级 3 括号优先级 最高 19
+</code></pre>
+<ol start="4">
+<li>闭包访问，值和引用赋值问题，变量遮蔽</li>
+</ol>
+<p>在 ts 下，不存在回调地狱（真的得用 ts，类型完备的代码）</p>
+<ol start="5">
+<li>函数传参，函数返回</li>
+</ol>
+<p>可以更加方便地封装和复用代码</p>
+<pre><code class="javascript">function test(a, b) &#123;
+  return a + b;
+&#125;
+
+test(1, Symbol()); // boom
+</code></pre>
+<pre><code class="typescript">/**
+ * test2
+ * ctrl+alt 点两下 d
+ *
+ * @param &#123;number&#125; a 第一个参数，数字
+ * @param &#123;number&#125; b 第二个参数，是个数字
+ * @return &#123;*&#125;  &#123;number&#125; 返回 number
+ */
+function test2(a: number, b: number): number &#123;
+  return a + b;
+&#125;
+test2(1, &quot;&quot;); // type Error
+let result = test2(1, 2);
+result + Symbol(); // type Error
+</code></pre>
+<h2 id="ts-优势"><a href="#ts-优势" class="headerlink" title="ts 优势"></a>ts 优势</h2><ol>
+<li><p>ts 静态类型语言，构建工具或编译器，会先将大家写得 ts 代码，编译成 js，再运行，在编译的过程中，就会发现大家的错误（<strong>写代码的时候，就已经知道错误了</strong>）</p>
+</li>
+<li><p>ts 方便封装复用，进行团队协作（团队人数变多，项目变大），增加效率，企业无法抵抗 ts 的诱惑</p>
+</li>
+<li><p>自己和自己的协作，我今天写得代码，20 天以后修改，<strong>代码重构</strong></p>
+</li>
+<li><p>架构师，第三方开发者，可以利用 ts，将实际开发者当做 <strong>提线木偶</strong>（类型体操：将类型当做开发语言，针对编程进行编程 —— 元编程）</p>
+</li>
+<li><p>主流新一代前端框架（Angular，react，vue），主流游戏引擎（cocos creator，laya box），主流后端框架（koa，express，fastify，nestjs），主流嵌入式和应用开发（electron 桌面应用，uniapp，ionic，react native） 全部进入 ts 时代</p>
+</li>
+</ol>
+<h2 id="ts-代价"><a href="#ts-代价" class="headerlink" title="ts 代价"></a>ts 代价</h2><ol>
+<li>得写类型声明代码（代码量增加）</li>
+<li>语法量增加（要求增加，代码会变得更加复杂），对 js 的要求更上了一层楼</li>
+</ol>
+<p>ts 是只有在 协作，重构，第三方开发，架构师工作，海量的代码 —— 对 ts 的完全掌握</p>
+<p>ts 只针对编译到 js 的过程生效，对代码运行没有影响</p>
+<p><strong>先编译，再运行</strong></p>
+<h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><pre><code class="javascript">let a = [&quot;&quot;, 2, Symbol()];
+a[0] + a[2];
+</code></pre>
+<p><code>xxx[]</code>:数组类型</p>
+<p><code>(xxx|yyy)[]</code>:不同类型值的数组,每一项的类型，都有可能是 xxx, yyy</p>
+<pre><code class="typescript">let b = [1, 2, 3, 4];
+// (number|string|boolean)[] // 每一项类型，都有可能是 number 或者 string 或者 boolean
+let a = [1, &quot;&quot;, true];
+// number[]
+</code></pre>
+<p><code>xxx|yyy|zzz</code> 联合类型</p>
+<pre><code class="javascript">let a: string | number = 1;
+a = &quot;&quot;;
+</code></pre>
+<p>数组两种声明方式：</p>
+<pre><code class="typescript">// 直接类型声明
+let a: number[] = [1, 2, 3];
+
+let b: (number | string)[] = [1, 2, 3, 4, &quot;1&quot;, &quot;2&quot;];
+
+// 按**类**声明 class A&#123;&#125;  new A(a)  A(a)
+// 泛型（类型的函数）A&lt;typeof a&gt;
+let c: Array&lt;number&gt; = [1, 2, 3];
+
+let d: Array&lt;number | string&gt; = [1, 2, 3, 4, &quot;1&quot;];
+</code></pre>
+<h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>函数声明类型定义</p>
+<pre><code class="typescript">/**
+ * JSDoc 描述
+ * ctrl + alt + d(两下)
+ * 这个函数，是做一个字符串和一个数字的加法
+ *
+ * @author &#123;杜老师&#125;
+ * @datetime &#123;2022-1-1&#125;
+ * @param &#123;string&#125; a 参数 a 是一个字符串
+ * @param &#123;number&#125; b 参数 b 是一个数字
+ * @return &#123;*&#125;  &#123;number&#125; 返回值是一个 number
+ */
+function test(a: string, b: number): number &#123;
+  return parseInt(a) + b;
+&#125;
+
+const test = (a: string, b: number): number =&gt; &#123;
+  return parseInt(a) + b;
+&#125;;
+
+test(&quot;&quot;, 1); // 调用的时候，老师傅指导你写代码
+</code></pre>
+<h2 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h2><p>把类型当做变量</p>
+<p>ts 类型：元编程（针对编程本身就行编程）</p>
+<pre><code class="typescript">type S = string;
+
+let a: S = &quot;&quot;;
+let b: S = &quot;2&quot;;
+
+// 函数类型别名
+type TestFunc = (a: string, b: number) =&gt; undefined;
+
+// void 不确定返回了什么 undefined 必须返回 undefined
+const test: TestFunc = (a, b) =&gt; &#123;
+  // return b + parseInt(a);
+  return undefined;
+&#125;;
+
+const result = test(&quot;1&quot;, 1);
+</code></pre>
+<p>函数可选参数</p>
+<pre><code class="typescript">function testFunc(a?: string, b?: number) &#123;
+  return parseInt(a || &quot;0&quot;) + (b || 0);
+&#125;
+
+testFunc(&quot;&quot;);
+</code></pre>
+<p>函数是第一类对象，对象是特殊的函数（散列 hash 函数）</p>
+<h2 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h2><pre><code class="typescript">// ts 是不是会限制 对象结构？ 写接口
+// ?: 可选类型   string|number 联合类型
+
+type A = &#123; username: string; password: string | undefined &#125;;
+
+// 合并
+interface A2 &#123;
+  username: string;
+  password?: string;
+&#125;
+interface A2 &#123;
+  age: number;
+&#125;
+
+let a2: A2 = &#123;
+  username: &quot;&quot;,
+  password: &quot;&quot;,
+  age: 1,
+&#125;;
+
+let a: A = &#123;
+  username: &quot;&quot;,
+  password: undefined,
+&#125;;
+// a.password = 1;
+
+let obj = &#123;&#125;;
+let obj2 = &#123; ...obj, sss: 1 &#125;;
+
+// obj2 继承了 obj  混入式继承
+
+// 对象信息提取出来：泛化   把类型实现：继承
+
+type X = &#123; a: 1 &#125;;
+type Y = &#123; b: 1 &#125;;
+
+let o: Y &amp; X; // 交叉类型
+
+// 类型遮蔽
+let p: &#123; username: string &#125; &amp; &#123; password: string &#125; = &#123;
+  username: &quot;&quot;,
+  password: &quot;&quot;,
+&#125;;
+
+interface Obj1 &#123;
+  username: string;
+&#125;
+
+// ts 的继承，只做类型匹配，不做类型混入
+interface Obj2 extends Obj1 &#123;
+  // username: number;
+  password: string;
+&#125;
+let a3: Obj2 = &#123; username: &quot;&quot;, password: &quot;&quot; &#125;;
+</code></pre>
+<h2 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h2><pre><code class="typescript">let a = 1;
+
+let b = &#123; value: 1 &#125;;
+
+function test(a: number): string &#123;
+  return a.toString();
+&#125;
+
+const result = test(a);
+</code></pre>
+<p>一般情况下，只有对象声明处，函数声明处，数组声明处的时候，才需要用到类型声明&#x2F;注解</p>
+<p>其他情况下，靠类型推断，就能确认</p>
+<ol>
+<li>类型注解，能省就剩</li>
+<li>多多将鼠标移到变量上，查看类型</li>
+<li>如果还没有熟悉 ts，该注解，该声明的地方，就该进行练习</li>
+</ol>
+<h2 id="类型字面量"><a href="#类型字面量" class="headerlink" title="类型字面量"></a>类型字面量</h2><pre><code class="typescript">// 类型字面量 栈中直接保存数据
+function test() &#123;
+  let a: 1 | 2 = 1;
+  a = 2;
+  function test2() &#123;
+    // console.log(a); // 错误
+    let a: 2 = 2;
+    console.log(a);
+  &#125;
+&#125;
+</code></pre>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><pre><code class="typescript">// 枚举类型
+enum Spit &#123;
+  backend = &quot;那个前端好恶心&quot;,
+  frontend = &quot;你这个java后端才恶心&quot;,
+&#125;
+let b: Spit = Spit.frontend;
+
+// 枚举类型默认声明 只是做区分 0，1，2
+enum Spit2 &#123;
+  backend, // =0
+  frontend, // =1
+&#125;
+</code></pre>
+<h2 id="对象的迭代声明"><a href="#对象的迭代声明" class="headerlink" title="对象的迭代声明"></a>对象的迭代声明</h2><pre><code class="typescript">let a = &#123; a: 1, b: 2, c: 3 &#125;;
+
+a[&quot;a&quot;];
+a.a;
+
+const result = a[&quot;王沛然&quot;];
+// any
+
+// 对象的迭代类型声明
+let b: &#123; [key: string]: number &#125; = &#123; 王沛然: 3 &#125;;
+
+const result2 = b[&quot;王沛然&quot;];
+// number
+</code></pre>
+<h2 id="any-amp-ignore"><a href="#any-amp-ignore" class="headerlink" title="any &amp; ignore"></a>any &amp; ignore</h2><p>回退成 js</p>
+<pre><code class="typescript">//  typescript -&gt; anyScript
+let a: any = 1;
+
+function test(a: any) &#123;&#125;
+
+// @ts-ignore
+__dirname + &quot;&quot;;
+
+let a = 1;
+// @ts-ignore
+a + Symbol();
+</code></pre>
+<h2 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h2><pre><code class="typescript">// 感叹号打在值后面  值一定不是空的 undefined/null
+// 非空断言
+const div = document.querySelector(&quot;#id&quot;)!;
+
+let a: any = &quot;&quot;;
+let b: any = 1;
+
+// 类型断言
+let c = (a + b) as string;
+</code></pre>
+<p>当我们和后端通讯时，后端返回的数据在后端定义，前端需要再次声明</p>
+<pre><code class="typescript">const result = axios.get(&quot;http://xxx.com&quot;).then((res) =&gt; &#123;
+  return res as &#123; username: string; password: string &#125;;
+&#125;);
+result.then((res) =&gt; &#123;
+  // res &#123; username: string; password: string &#125;
+&#125;);
+</code></pre>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><pre><code class="typescript">// 写在尖括号里的，就是泛型
+function test&lt;T&gt;(a: T) &#123;
+  return a;
+&#125;
+
+// 拿到的全是类型字面量
+const result = test(&quot;&quot;); // 已经确定要传 number
+
+// 泛型是类型的函数
+let a: Array&lt;string&gt; = [&quot;&quot;, &quot;&quot;];
+</code></pre>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>数组的字面量</p>
+<pre><code class="typescript">// “数组字面量”，规定了数组的长度，数组的每一项的类型
+// 元组
+let a: [1, 2, 3, string, 5] = [1, 2, 3, &quot;sdfsdfsdf&quot;, 5];
+</code></pre>
+<h2 id="as-const"><a href="#as-const" class="headerlink" title="as const"></a>as const</h2><p>as const 让类型自动推断为字面量&#x2F;元组</p>
+<pre><code class="typescript">const a = [1, 2, 3, &quot;sdfsdfsdf&quot;, 5] as const;
+
+const b = 1 as const;
+</code></pre>
+<h2 id="泛型是类型的函数"><a href="#泛型是类型的函数" class="headerlink" title="泛型是类型的函数"></a>泛型是类型的函数</h2><pre><code class="typescript">// 类型元编程函数 泛型
+type A&lt;T&gt; = &#123; value: T &#125;;
+type Func&lt;T&gt; = (a: T) =&gt; T;
+type a = 1;
+// 类型体操：仅仅使用 ts 类型系统，进行编程，结果在代码提示上查看
+
+// 类型元编程
+let a: A&lt;string&gt; = &#123; value: &quot;&quot; &#125;;
+let b: A&lt;number&gt; = &#123; value: 1 &#125;;
+let c: A&lt;1&gt; = &#123; value: 1 &#125;;
+
+let d: Func&lt;string&gt; = (a: string) =&gt; a;
+</code></pre>
+<h2 id="协变-amp-逆变"><a href="#协变-amp-逆变" class="headerlink" title="协变&amp;逆变"></a>协变&amp;逆变</h2><p>人工智能张量（tensor）计算</p>
+<pre><code class="typescript">// 类型协变（跟着变）
+type A = string;
+type B = &quot;&quot;;
+
+let x1: A = &quot;sdfsdfsdf&quot;;
+let x2: B = &quot;&quot;;
+
+// 子类型可以赋值给超类型
+x1 = x2;
+// x2 = x1;
+
+// 类型逆变 泛型是类型逆变 函数声明也是类型逆变
+type C = (a: string) =&gt; void;
+type D = (a: &quot;&quot;) =&gt; void;
+
+let y1: C = (a: string) =&gt; &#123;&#125;;
+y1(&quot;234234&quot;);
+let y2: D = (a: &quot;&quot;) =&gt; &#123;&#125;;
+y2(&quot;&quot;);
+
+y1(&quot;123&quot;);
+y1(&quot;王沛然&quot;);
+
+y2(&quot;123&quot;);
+
+// y1 = y2; 反过来了，子类型出现的地方，不能赋值给父类型出现的地方
+y2 = y1;
+</code></pre>
+<h2 id="泛型的逆变推导（泛型上写-if-else）"><a href="#泛型的逆变推导（泛型上写-if-else）" class="headerlink" title="泛型的逆变推导（泛型上写 if else）"></a>泛型的逆变推导（泛型上写 if else）</h2><p>通过已有泛型类型，倒取出其中的类型</p>
+<pre><code class="typescript">type A = number;
+
+// 类型条件判断
+type B = A extends string ? symbol : boolean;
+
+type C = Promise&lt;string&gt;;
+
+// 倒取出 C 的泛型
+type D = C extends Promise&lt;infer P&gt; ? P : never;
+</code></pre>
+<h2 id="keyof-x2F-key-in"><a href="#keyof-x2F-key-in" class="headerlink" title="keyof&#x2F;key in"></a>keyof&#x2F;key in</h2><p>类型的变量声明<code>type</code>, 类型的函数<code>A&lt;T&gt;</code>, 类型的条件判断<strong>extends 语法，infer 语法</strong>，</p>
+<p>只要有 变量，函数，条件，循环 就能写任何逻辑代码</p>
+<pre><code class="typescript">interface Test &#123;
+  a: number;
+  b: number;
+  c: string;
+&#125;
+
+type TestKeys = keyof Test;
+
+type Test2 = &#123; [key in TestKeys]: number &#125;;
+
+let a: TestKeys = &quot;c&quot;;
+</code></pre>
+<h2 id="ts-工具泛型"><a href="#ts-工具泛型" class="headerlink" title="ts 工具泛型"></a>ts 工具泛型</h2><pre><code class="typescript">interface Obj &#123;
+  a: 1;
+  b: 2;
+  c: &quot;&quot;;
+&#125;
+
+// 处理后端数据
+
+// 对象类型所有属性，都可选 partial 部分
+type Obj2 = Partial&lt;Obj&gt;;
+
+let obj: Obj = &#123; a: 1, b: 2, c: &quot;&quot; &#125;;
+
+let obj2: Obj2 = &#123; a: 1 &#125;;
+
+// 正向选择 pick 选出
+
+type Obj3 = Pick&lt;Obj, &quot;a&quot;&gt;;
+type Obj4 = Pick&lt;Obj, &quot;a&quot; | &quot;b&quot;&gt;;
+
+// 反向选择 omit 隐藏
+
+type Obj5 = Omit&lt;Obj, &quot;a&quot;&gt;;
+
+function Test(a: string, b: number) &#123;
+  return a + b;
+&#125;
+
+// 依赖注入必用
+
+// 取出函数的参数类型
+type Var1 = Parameters&lt;typeof Test&gt;;
+
+// 取出函数返回值类型
+type Var2 = ReturnType&lt;typeof Test&gt;;
+
+type Test2 = (a: string) =&gt; number;
+
+type Var3 = Parameters&lt;Test2&gt;;
+type Var4 = ReturnType&lt;Test2&gt;;
+</code></pre>
+<h2 id="类型体操"><a href="#类型体操" class="headerlink" title="类型体操"></a>类型体操</h2><p>手写工具泛型</p>
+<pre><code class="typescript">type Partial2&lt;T extends &#123; [key: string]: any &#125;&gt; = &#123;
+  [key in keyof T]?: T[key] | undefined;
+&#125;;
+
+type Obj1 = Partial&lt;&#123; a: 1; b: 2 &#125;&gt;;
+type Obj2 = Partial2&lt;&#123; a: 1; b: 2 &#125;&gt;;
+
+type Pick2&lt;T extends &#123; [key: string]: any &#125;, P extends keyof T&gt; = &#123;
+  [key in P]: T[P];
+&#125;;
+
+type Obj3 = Pick&lt;&#123; a: 1; b: 2; c: 3 &#125;, &quot;a&quot; | &quot;b&quot;&gt;;
+type Obj4 = Pick2&lt;&#123; a: 1; b: 2; c: 3 &#125;, &quot;a&quot; | &quot;b&quot;&gt;;
+
+type ReturnType2&lt;T extends (...args: any[]) =&gt; any&gt; = T extends (
+  ...args: any[]
+) =&gt; infer P
+  ? P
+  : never;
+
+type Func1 = ReturnType2&lt;() =&gt; string&gt;;
+</code></pre>
+<pre><code class="typescript">type  Obj = &#123;a:1,b:2,c&#123;value:1&#125;&#125;
+type DeepPaths&lt;T&gt;
+
+type Val = DeepPaths&lt;Obj, &#39;c.value&#39;&gt;
+</code></pre>
+<h2 id="你了解-ts-么？了解，写过，不-any-（12K-）"><a href="#你了解-ts-么？了解，写过，不-any-（12K-）" class="headerlink" title="你了解 ts 么？了解，写过，不 any （12K+）"></a>你了解 ts 么？了解，写过，不 any （12K+）</h2><ul>
+<li><p>ts 是 js 的<strong>类型超集</strong>(ts 可以直接写 js，anyscript)</p>
+</li>
+<li><p>ts 可以对<strong>左值</strong>加上<strong>类型注解</strong>（:T），对<strong>右值</strong>加上<strong>类型断言</strong>(as T, !)，并且会有<strong>类型推断</strong>机制</p>
+</li>
+<li><p>ts 有<strong>泛型</strong>(<T>)机制，<strong>字面值</strong>(:1|2)机制，我认为<strong>元组</strong>([1,string])类似于数组的<strong>字面值</strong>，对象可以<strong>type</strong>或者<strong>interface</strong>声明，其中 interface 可以写多个进行<strong>合并</strong></p>
+</li>
+<li><p>ts 中，有<strong>协变</strong>和<strong>逆变</strong>机制，所以，需要用<strong>infer</strong>取出泛型</p>
+</li>
+<li><p>ts 还有 <strong>key in</strong> 和 <strong>keyof</strong>，可以做类型的迭代</p>
+</li>
+<li><p>ts 中，可以直接进行类型空间的编程，叫做<strong>类型元编程</strong>(Proxy)，把代码提示框当做代码运行时，这种编程方式，又被称为<strong>类型体操</strong></p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/type-challenges/type-challenges/issues?q=label:7258+label:answer">答案</a></p>
+
+  </div>
+  <div id="gitalk-container"></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+
+    
+    <a href="/2023/01/03/hello-world/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>Hello World</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2023 By Joey. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
