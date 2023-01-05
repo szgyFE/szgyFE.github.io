@@ -308,7 +308,7 @@
                 <span class="post-header-info-author-text"> <a target="_blank" rel="noopener" href="https://github.com/szgyFE/Front-end-Interview-Notes">szgy</a></span>
                 <div class="post-header-info-author-categories">
                     
-                         <a href="../../categories/前端学习/" target="_blank" >前端学习</a>
+                         <a href="../../categories/html、css/" target="_blank" >html、css</a>
                     
                 </div>
                 <p>2021-11-03 20:33:36</p>
@@ -357,22 +357,17 @@
 <li>position的值为absolute或fixed</li>
 </ul>
 <h4 id="3、应用场景"><a href="#3、应用场景" class="headerlink" title="3、应用场景"></a>3、应用场景</h4><ul>
-<li><p>防止外边距重叠</p>
-<ul>
-<li>问题：当两个上下的盒子都设置了外边距margin时，就会出现外边距重叠的问题，他们两个之间的margin距离会以大的那个大的margin为准（而不是两个margin值相加）</li>
+<li><strong>防止外边距重叠</strong></li>
+<li>问题：当两个上下的盒子都设置了外边距margin时，就会出现外边距重叠的问题，他们两个之间的margin距离会以大的那个大的margin为准（而不是两个margin值相加）<ul>
 <li>解决方法：给其中一个盒子包在一个BFC盒子里面（给这个盒子设置<code>overflow:hidden</code>），这样他们属于两个BFC，会互不影响</li>
 </ul>
 </li>
-<li><p>使用Float脱离文档流，高度塌陷的</p>
-<ul>
-<li><p>问题：内容浮动父盒子高度会消失</p>
-</li>
-<li><p>解决方法：给父盒子触发BFC，这样他们属于两个BFC，会互不影响</p>
-</li>
+<li><strong>使用Float脱离文档流，高度塌陷的</strong><ul>
+<li>问题：内容浮动父盒子高度会消失</li>
+<li>解决方法：给父盒子触发BFC，这样他们属于两个BFC，会互不影响</li>
 </ul>
 </li>
-<li><p>两栏布局覆盖</p>
-<ul>
+<li><strong>两栏布局覆盖</strong><ul>
 <li>问题：两栏布局中，给前一个盒子设置浮动，后一个盒子不设置浮动，那么前一个盒子会因为脱离文档流覆盖在后一个盒子的上方</li>
 <li>解决方法：可以把第二个盒子触发BFC</li>
 </ul>
@@ -555,12 +550,14 @@ text-overflow: ellipsis;（多行文本的情况下，用省略号 “…” 隐
 </li>
 <li><p><strong>出现问题原因</strong></p>
 </li>
-<li><p>当使用行内元素排版时，元素之间的符号都会被浏览器渲染，其中就包括换行符和空格，根据 white-space 的处理方式（默认时normal，合并多余空格）会将HTML中回车符换行符转换成空白符，在字体不为0的情况下，会占据空间，这也是我们所看到的 inline-block 元素之间的间隙。</p>
-</li>
-<li><p><strong>解决方法</strong></p>
-</li>
-<li><p>直接删除元素之间的换行符和空格</p>
+</ul>
+<pre><code class="css">当使用行内元素排版时，元素之间的符号都会被浏览器渲染，其中就包括换行符和空格，
+根据 white-space 的处理方式（默认时normal，合并多余空格）会将HTML中回车符换行符转换成空白符，
+在字体不为0的情况下，会占据空间，这也是我们所看到的 inline-block 元素之间的间隙
+</code></pre>
 <ul>
+<li><strong>解决方法</strong><ul>
+<li>直接删除元素之间的换行符和空格</li>
 <li>父元素设置 font-size 为0，子元素设置正确的 font-size</li>
 </ul>
 </li>
@@ -568,40 +565,29 @@ text-overflow: ellipsis;（多行文本的情况下，用省略号 “…” 隐
 <h2 id="十五、伪类和伪元素"><a href="#十五、伪类和伪元素" class="headerlink" title="十五、伪类和伪元素"></a><a name='15'>十五、伪类和伪元素</a></h2><ul>
 <li>伪类和伪元素用于修饰一些不在文档树中的信息</li>
 <li>伪类用于文档树中已存在的元素处于某个状态时，给它添加样式，这个状态根据用户行为而定（如 :hover）</li>
-<li>伪元素用于创建一些不在文档树中的元素并设置样式，可以通过这些元素给DOM元素的某些部分设置样式，但是实际这些伪<br>元素并没有真正存在文档树中，只是用户能看到这些元素而已(如 ::before）</li>
+<li>伪元素用于创建一些不在文档树中的元素并设置样式，可以通过这些元素给DOM元素的某些部分设置样式，但是实际这些伪元素并没有真正存在文档树中，只是用户能看到这些元素而已(如 ::before）</li>
 </ul>
 <h2 id="十六、offsetHight、scrollHeight-、clientHight"><a href="#十六、offsetHight、scrollHeight-、clientHight" class="headerlink" title="十六、offsetHight、scrollHeight 、clientHight"></a><a name='16'>十六、offsetHight、scrollHeight 、clientHight</a></h2><ul>
-<li><p><code>offsetHight：border +padding +content</code></p>
-</li>
-<li><p><code>clientHeight ：border +padding</code></p>
-</li>
-<li><p><code>scrollHeight：padding +实际内容高度</code>（如：当前这个盒子里有个比这个盒子大的盒子，就产生了滚动条，那么实际内容高度就为里面那个盒子的高度+padding）</p>
-</li>
-<li><p><strong>其他相关</strong> </p>
-<ul>
-<li><code>scrollTop</code>、<code>scrollLeft</code> ：<code>元素.scrollTop</code>：元素被卷去的头部，<code>元素.scrollLeft</code>: 元素被卷去的左侧距离</li>
+<li><code>offsetHight：border +padding +content</code></li>
+<li><code>clientHeight ：border +padding</code></li>
+<li><code>scrollHeight：padding +实际内容高度</code>（如：当前这个盒子里有个比这个盒子大的盒子，就产生了滚动条，那么实际内容高度就为里面那个盒子的高度+padding）</li>
+<li><strong>其他相关</strong></li>
 </ul>
-</li>
-<li><p><code>widow.scrollTo（x，y</code>）:滚动到指定坐标</p>
-</li>
-</ul>
-<pre><code class="javascript">  widow.scroll(&#123; //滚动到指定坐标
+<pre><code class="javascript">1、offsetTop:获取元素到最近带有定位的父元素的距离，如果没有则相对于body（只读属性，不能设置）
+
+2、scrollTop、scrollLeft 
+元素.scrollTop：元素被卷去的头部，元素.scrollLeft: 元素被卷去的左侧距离
+
+3、widow.scrollTo(x，y):滚动到指定坐标
+ widow.scroll(&#123; //滚动到指定坐标
       top：0//返回顶部
       behavior：smooth//平滑滚动
       &#125;)	//接收一个对象
+
+4、获取页面被卷去的高度:
+doument.documentElement.scrollTop：返回值是一个数字 ：卷去的数值
+widow.pageYoffset(但是这个属性不能修改，只能获取)
 </code></pre>
-<ul>
-<li><code>offsetTop</code>:获取元素到最近带有定位的父元素的距离，如果没有则相对于body（只读属性，不能设置）<ul>
-<li><p>获取页面被卷去的高度</p>
-<ul>
-<li><code>doument.documentElement.scrollTop</code>：返回值是一个数字 ：卷去的数值</li>
-</ul>
-</li>
-<li><p><code>widow.pageYoffset</code>(但是这个属性不能修改，只能获取)</p>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="十七、清除浮动的几种方式及原理？"><a href="#十七、清除浮动的几种方式及原理？" class="headerlink" title="十七、清除浮动的几种方式及原理？"></a><a name='17'>十七、清除浮动的几种方式及原理？</a></h2><pre><code class="bash">答：清除浮动主要是为了解决父盒子里的子盒子浮动导致父盒子高度塌陷为0的问题
 方法：
 1、直接给父盒子添加高度
@@ -811,8 +797,10 @@ css：
 <li><p>上述这两个是伪数组</p>
 </li>
 </ul>
-<p>例子：elem.childNodes获取的是子node节点，包括了文本、注释、元素</p>
-<p>而      elem.children 获取的是所有子元素  也就是元素节点，如div span 这些</p>
+<pre><code class="bash">例子：elem.childNodes获取的是子node节点，包括了文本、注释、元素
+
+而 elem.children 获取的是所有子元素  也就是元素节点，如div span 这些
+</code></pre>
 <h2 id="二十五、localstorage、sessionstorage、cookie的区别"><a href="#二十五、localstorage、sessionstorage、cookie的区别" class="headerlink" title="二十五、localstorage、sessionstorage、cookie的区别"></a><a name='25'>二十五、<code>localstorage</code>、<code>sessionstorage</code>、<code>cookie</code>的区别</a></h2><h4 id="1、存储大小不同-1"><a href="#1、存储大小不同-1" class="headerlink" title="1、存储大小不同"></a>1、存储大小不同</h4><ul>
 <li><code>localstorage</code>和<code>sessionstorage</code>的最大存储空间为5M，cookie的最大存储空间为4k</li>
 </ul>
@@ -893,6 +881,13 @@ Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
     </a>
     
 
+    
+    <a href="/2021/01/13/JavaScript/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>JavaScript学习笔记面试题</p>
+        </div>
+    </a>
     
 </div>
 </div>
