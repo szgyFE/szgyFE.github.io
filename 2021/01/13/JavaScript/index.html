@@ -35,7 +35,7 @@
  
 <script>hljs.highlightAll();</script>
 
-	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="szgy" type="application/atom+xml">
 </head>
 
 	<body>
@@ -908,7 +908,7 @@ function objectFactory() &#123;
 // 使用方法
 // objectFactory(构造函数, 初始化参数);
 </code></pre>
-<h2 id="十四、script标签的defer和aync-属性"><a href="#十四、script标签的defer和aync-属性" class="headerlink" title="十四、script标签的defer和aync 属性"></a><a name='14'>十四、script标签的defer和aync 属性</a></h2><pre><code class="js">1、js脚本会阻塞DOM解析；
+<h2 id="十四、script标签的defer和async-属性"><a href="#十四、script标签的defer和async-属性" class="headerlink" title="十四、script标签的defer和async 属性"></a><a name='14'>十四、script标签的defer和async 属性</a></h2><pre><code class="js">1、js脚本会阻塞DOM解析；
 2、defer和async 属性都会异步加载js 脚本，
 3、defer会在DOMContentLoaded事件触发之前执行脚本，也就是DOM树构建完成之前触发（所有这里做DOM操作时不会引起回流和重绘），
 4、async则是下载完js脚本就直接执行，不管是在哪个时间点，所以不适合做DOM操作，可能会引起回流重绘
