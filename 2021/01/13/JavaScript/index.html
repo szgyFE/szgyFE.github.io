@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-<title>JavaScript学习笔记面试题-前端学习</title>
+<title>JavaScript学习笔记及面试题-前端学习</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -71,7 +71,7 @@
 						
 								<li>
 									<a href="/categories">
-										分类
+										文章分类
 									</a>
 									<span class="dot"></span>
 								</li>
@@ -129,7 +129,7 @@
         </li>
         
         <li>
-            <a href="/categories">分类</a>
+            <a href="/categories">文章分类</a>
         </li>
         
         <li>
@@ -296,7 +296,7 @@
             
         </ul>
         
-        <h1>JavaScript学习笔记面试题</h1>
+        <h1>JavaScript学习笔记及面试题</h1>
         <div class="post-header-info">
             <div class="post-header-info-author">
                 
@@ -763,8 +763,10 @@ function randomSort(array) &#123;
 2、with 语句。with 语句会将指定的对象添加到作用域链中
 </code></pre>
 <h2 id="十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"><a href="#十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？" class="headerlink" title="十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"></a><a name='11'>十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？</a></h2><h4 id="1、闭包"><a href="#1、闭包" class="headerlink" title="1、闭包"></a>1、闭包</h4><pre><code class="js">MDN: 闭包（closure）是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合。
-我理解的闭包是内层函数引用外层函数变量的集合，也就是闭包是等于内层函数加上外层函数变量，注意内层函数对外层函数的引用(也就是地址)，而不是直接取值。
-外层变量会存在堆里面的闭包对象上，闭包对象在作用域对象里面，这就是闭包会泄漏的原因：当外层函数执行完成之后，我们仍能访问到外层的变量，是因为外层变量被存到了闭包对象里面。
+我理解的闭包是内层函数引用外层函数变量的集合，也就是闭包是等于内层函数加上外层函数变量，注意内层函数对外层函数的引用(也就是地址)，
+而不是直接取值。
+外层变量会存在堆里面的闭包对象上，闭包对象在作用域对象里面，这就是闭包会泄漏的原因：当外层函数执行完成之后，我们仍能访问到外层的变
+量，是因为外层变量被存到了闭包对象里面。
 </code></pre>
 <h4 id="2、闭包的作用"><a href="#2、闭包的作用" class="headerlink" title="2、闭包的作用"></a>2、闭包的作用</h4><pre><code class="js">1.外部函数可以访问内部函数的变量，但是不能修改，通过使用闭包，我们可以通过在外部调用闭包函数，从而在外部访问到函数内部的变量，
 2.可以使用以上这种方法来创建私有变量。
@@ -992,7 +994,9 @@ alert( user?.address?.street ); // undefined（不报错）
 </code></pre>
 </li>
 </ol>
-<h2 id="二十一、promise-allsettled"><a href="#二十一、promise-allsettled" class="headerlink" title="二十一、promise.allsettled "></a><a name='21'>二十一、promise.allsettled </a></h2><pre><code class="js">  Promise.allSettled跟Promise.all类似, 其参数接受一个Promise的数组, 返回一个新的Promise, 唯一的不同在于, 其不会进行短路, 也就是说当Promise全部处理完成后我们可以拿到每个Promise的状态, 而不管其是否处理成功.它返回一个Array的Promise
+<h2 id="二十一、promise-allsettled"><a href="#二十一、promise-allsettled" class="headerlink" title="二十一、promise.allsettled "></a><a name='21'>二十一、promise.allsettled </a></h2><pre><code class="js">Promise.allSettled跟Promise.all类似, 其参数接受一个Promise的数组, 返回一个新的Promise, 唯一的不同在于, 其不会进行短
+路, 
+也就是说当Promise全部处理完成后我们可以拿到每个Promise的状态, 而不管其是否处理成功.它返回一个Array的Promise
 </code></pre>
 <h2 id="二十二、array-x3D-vs-array-length-x3D-0"><a href="#二十二、array-x3D-vs-array-length-x3D-0" class="headerlink" title="二十二、array &#x3D; [] vs array.length &#x3D; 0 "></a><a name='22'>二十二、array &#x3D; [] vs array.length &#x3D; 0 </a></h2><pre><code class="js">//array = []
 let foo = [&#39;hello&#39;, &#39;world&#39;];
@@ -1309,7 +1313,7 @@ Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
     <a href="/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/">
         <div class="post-paging-last">
             <span>上一篇</span>
-            <p>HTML、CSS学习笔记面试题</p>
+            <p>HTML、CSS学习笔记及面试题</p>
         </div>
     </a>
     
