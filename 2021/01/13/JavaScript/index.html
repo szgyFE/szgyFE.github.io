@@ -323,40 +323,44 @@
   <div id="article" class="post-content-info">
     
 
-    <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p><a href='#1'>一、说说数据类型、检测方式、数据存储？</a></p>
-<p><a href='#2'>二、说说null和undefined？</a></p>
-<p><a href='#3'>三、强制类型转化和隐式类型转化？</a></p>
-<p><a href='#4'>四、列举常用的数组方法？</a></p>
-<p><a href='#5'>五、var let const 区别</a></p>
-<p><a href='#6'>六、for….in 和 for…. of区别？</a></p>
-<p><a href='#7'>七、 如何实现数组的随机排序？</a></p>
-<p><a href='#8'>八、伪数组和如何将伪数组转化为真数组？</a></p>
-<p><a href='#9'>九、 原型、原型链、特点？</a></p>
-<p><a href='#10'>十、 作用域、作用链？</a></p>
-<p><a href='#11'>十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？</a></p>
-<p><a href='#12'>十二、垃圾回收机制、内存泄漏？</a></p>
-<p><a href='#13'>十三、new 操作符具体干了什么呢？如何实现？</a></p>
-<p><a href='#14'>十四、script标签的defer和aync 属性</a></p>
-<p><a href='#15'>十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</a></p>
-<p><a href='#16'>十六、谈谈对this的理解？</a></p>
-<p><a href='#17'>十七、call、apply、bind？</a></p>
-<p><a href='#18'>十八、Array.from？</a></p>
-<p><a href='#19'>十九、new Array和Array of？</a></p>
-<p><a href='#20'>二十、可选链 <code>?.</code></a></p>
-<p><a href='#21'>二十一、promise.allsettled？</a></p>
-<p><a href='#22'>二十二、array &#x3D; [] vs array.length &#x3D; 0？</a></p>
-<p><a href='#23'>二十三、|| 和 &amp;&amp; 操作符的返回值？</a></p>
-<p><a href='#24'>二十四、为什么需要微任务、宏任务？</a></p>
-<p><a href='#25'>二十五、Promise并发控制？</a></p>
-<p><a href='#26'>二十六、构造一个全为0的数组（两种方法）？</a></p>
-<p><a href='#27'>二十七、数组的扁平化以及扁平化数组转化为树状结构数组？</a></p>
-<p><a href='#28'>二十八、Blob、ArrayBuffer？</a></p>
-<p><a href='#29'>二十九、合并两个数组对象？</a></p>
-<p><a href='#30'>三十、数组随机排序 ？</a></p>
-<p><a href='#31'>三十一、如何终止一个forEach ？</a></p>
-<p><a href='#32'>三十二、JavaScript传参的方式？</a></p>
-<p><a href='#33'>三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？</a></p>
-<h2 id="一、说说数据类型、检测方式、数据存储？"><a href="#一、说说数据类型、检测方式、数据存储？" class="headerlink" title="一、说说数据类型、检测方式、数据存储？"></a><a name='1'>一、说说数据类型、检测方式、数据存储？</a></h2><h4 id="1、数据类型"><a href="#1、数据类型" class="headerlink" title="1、数据类型"></a>1、数据类型</h4><ul>
+    <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p><a href="#1">一、说说数据类型、检测方式、数据存储？</a></p>
+<p><a href="#2">二、说说null和undefined？</a></p>
+<p><a href="#3">三、强制类型转化和隐式类型转化？</a></p>
+<p><a href="#4">四、列举常用的数组方法？</a></p>
+<p><a href="#5">五、var let const 区别</a></p>
+<p><a href="#6">六、for….in 和 for…. of区别？</a></p>
+<p><a href="#7">七、 如何实现数组的随机排序？</a></p>
+<p><a href="#8">八、伪数组和如何将伪数组转化为真数组？</a></p>
+<p><a href="#9">九、 原型、原型链、特点？</a></p>
+<p><a href="#10">十、 作用域、作用链？</a></p>
+<p><a href="#11">十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？</a></p>
+<p><a href="#12">十二、垃圾回收机制、内存泄漏？</a></p>
+<p><a href="#13">十三、new 操作符具体干了什么呢？如何实现？</a></p>
+<p><a href="#14">十四、script标签的defer和aync 属性</a></p>
+<p><a href="#15">十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</a></p>
+<p><a href="#16">十六、谈谈对this的理解？</a></p>
+<p><a href="#17">十七、call、apply、bind？</a></p>
+<p><a href="#18">十八、Array.from？</a></p>
+<p><a href="#19">十九、new Array和Array of？</a></p>
+<p><a href="#20">二十、可选链 <code>?.</code></a></p>
+<p><a href="#21">二十一、promise.allsettled？</a></p>
+<p><a href="#22">二十二、array &#x3D; [] vs array.length &#x3D; 0？</a></p>
+<p><a href="#23">二十三、|| 和 &amp;&amp; 操作符的返回值？</a></p>
+<p><a href="#24">二十四、为什么需要微任务、宏任务？</a></p>
+<p><a href="#25">二十五、Promise并发控制？</a></p>
+<p><a href="#26">二十六、构造一个全为0的数组（两种方法）？</a></p>
+<p><a href="#27">二十七、数组的扁平化以及扁平化数组转化为树状结构数组？</a></p>
+<p><a href="#28">二十八、Blob、ArrayBuffer？</a></p>
+<p><a href="#29">二十九、合并两个数组对象？</a></p>
+<p><a href="#30">三十、数组随机排序 ？</a></p>
+<p><a href="#31">三十一、如何终止一个forEach ？</a></p>
+<p><a href="#32">三十二、JavaScript传参的方式？</a></p>
+<p><a href="#33">三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？</a></p>
+<hr>
+
+
+
+<h2 id="一、说说数据类型、检测方式、数据存储？"><a href="#一、说说数据类型、检测方式、数据存储？" class="headerlink" title="一、说说数据类型、检测方式、数据存储？"></a><a name="1">一、说说数据类型、检测方式、数据存储？</a></h2><h4 id="1、数据类型"><a href="#1、数据类型" class="headerlink" title="1、数据类型"></a>1、数据类型</h4><ul>
 <li>简单数据类型：null、undefined、String、Number、symbol、Bigint、Boolean，</li>
 <li>复杂（引用）数据类型：Object对象（Array，Function 、Date、Math等等）</li>
 </ul>
@@ -374,14 +378,14 @@
 <li>js中简单数据类型直接存在栈内存中</li>
 <li>引用数据则是将数据存在堆内，在栈中存引用数据类型的引用地址，地址指向堆内存的引用数据</li>
 </ul>
-<h2 id="二、说说null和undefined？"><a href="#二、说说null和undefined？" class="headerlink" title="二、说说null和undefined？"></a><a name='2'>二、说说null和undefined？</a></h2><ul>
+<h2 id="二、说说null和undefined？"><a href="#二、说说null和undefined？" class="headerlink" title="二、说说null和undefined？"></a><a name="2">二、说说null和undefined？</a></h2><ul>
 <li>null和undefined都是js基本数据类型</li>
 <li>当使用严格相等 <code>===</code> 比较二者时，它们不相等，因为它们属于不同的类型。</li>
 <li>当使用非严格相等 <code>==</code> 比较二者时，JavaScript 存在一个特殊的规则，<strong>会判定它们相等。</strong>它们俩就像“一对恋人”，仅仅等于对方而不等于其他任何的值。</li>
 <li>当使用数学式或其他比较方法 <code>&lt; &gt; &lt;= &gt;=</code> 时：null&#x2F;undefined会被转化为数字，其中<code>null</code> 被转化为 <code>0</code>，<code>undefined</code> 被转化为 <code>NaN</code>。</li>
 <li>另外，在做boolean 转换时 null 、0、空字符串 、undefined、NaN都会被转化为false</li>
 </ul>
-<h2 id="三、列举强制类型转化和隐式类型转化"><a href="#三、列举强制类型转化和隐式类型转化" class="headerlink" title="三、列举强制类型转化和隐式类型转化?"></a><a name='3'>三、列举强制类型转化和隐式类型转化?</a></h2><h4 id="1、强制类型转化"><a href="#1、强制类型转化" class="headerlink" title="1、强制类型转化"></a>1、强制类型转化</h4><ul>
+<h2 id="三、列举强制类型转化和隐式类型转化"><a href="#三、列举强制类型转化和隐式类型转化" class="headerlink" title="三、列举强制类型转化和隐式类型转化?"></a><a name="3">三、列举强制类型转化和隐式类型转化?</a></h2><h4 id="1、强制类型转化"><a href="#1、强制类型转化" class="headerlink" title="1、强制类型转化"></a>1、强制类型转化</h4><ul>
 <li>转化成字符串 <code>toString()</code>， <code>String()</code></li>
 <li>转换成数字 <code>Number()</code>、 <code>parseInt()</code>、 <code>parseFloat()</code></li>
 </ul>
@@ -411,7 +415,7 @@ console.log(parseInt(&#39;12abc&#39;))//结果为12
 （4） ? : 中的条件判断表达式。
 （5） 逻辑运算符 ||（逻辑或）和 &amp;&amp;（逻辑与）左边的操作数（作为条件判断表达式）。
 </code></pre>
-<h2 id="四、列举常用的数组方法？"><a href="#四、列举常用的数组方法？" class="headerlink" title="四、列举常用的数组方法？"></a><a name='4'>四、列举常用的数组方法？</a></h2><h4 id="1、破坏性方法"><a href="#1、破坏性方法" class="headerlink" title="1、破坏性方法"></a>1、破坏性方法</h4><blockquote>
+<h2 id="四、列举常用的数组方法？"><a href="#四、列举常用的数组方法？" class="headerlink" title="四、列举常用的数组方法？"></a><a name="4">四、列举常用的数组方法？</a></h2><h4 id="1、破坏性方法"><a href="#1、破坏性方法" class="headerlink" title="1、破坏性方法"></a>1、破坏性方法</h4><blockquote>
 <p>注：破坏性方法表示方法会改变原数组</p>
 </blockquote>
 <ul>
@@ -603,7 +607,7 @@ alert( arraysEqual([1, 2], [1, 2])); // true
 <li><code>arr.copyWithin(target, start, end)</code>—— 将从位置 <code>start</code> 到 <code>end</code> 的所有元素复制到 <strong>自身</strong> 的 <code>target</code> 位置（覆盖现有元素）。</li>
 <li><code>Array.of(element0[, element1[, …[, elementN\]]])</code> 基于可变数量的参数创建一个新的 <code>Array</code> 实例，而不需要考虑参数的数量或类型。</li>
 </ul>
-<h2 id="五、var-let-const-区别"><a href="#五、var-let-const-区别" class="headerlink" title="五、var let const 区别"></a><a name='5'>五、var let const 区别</a></h2><ul>
+<h2 id="五、var-let-const-区别"><a href="#五、var-let-const-区别" class="headerlink" title="五、var let const 区别"></a><a name="5">五、var let const 区别</a></h2><ul>
 <li><p><strong>块级作用域</strong>：let、const 有块级作用域，var不存在块级作用域</p>
 <ul>
 <li>解决了ES5的两个问题：内层变量可能覆盖外层变量以及用来计数的变量泄露为全局变量</li>
@@ -626,7 +630,7 @@ alert( arraysEqual([1, 2], [1, 2])); // true
 </ul>
 </li>
 </ul>
-<h2 id="六、for…-in-和-for…-of区别"><a href="#六、for…-in-和-for…-of区别" class="headerlink" title="六、for….in 和 for…. of区别"></a><a name='6'>六、for….in 和 for…. of区别</a></h2><ul>
+<h2 id="六、for…-in-和-for…-of区别"><a href="#六、for…-in-和-for…-of区别" class="headerlink" title="六、for….in 和 for…. of区别"></a><a name="6">六、for….in 和 for…. of区别</a></h2><ul>
 <li>for in 用于可枚举的数据，像是对象，数组，字符串，得到的是key</li>
 <li>for of 用于可迭代的数据，像 数组、字符串、Map、Set 得到的是value</li>
 <li>可枚举可以用<code>Object.getOwnpropertyDescriptors(要检测的对象)</code>，可迭代可以查看<code>Symbol.interator</code>属性里面的<code>next()</code>方法，有就是可迭代 </li>
@@ -637,7 +641,7 @@ for await (let res of [p1,p2,p3])&#123;
     console.log(res)//得到的也是多个promise的resolve()的结果
 &#125;
 </code></pre>
-<h2 id="七、-如何实现数组的随机排序？"><a href="#七、-如何实现数组的随机排序？" class="headerlink" title="七、 如何实现数组的随机排序？"></a><a name='7'>七、 如何实现数组的随机排序？</a></h2><pre><code class="js">//(1)
+<h2 id="七、-如何实现数组的随机排序？"><a href="#七、-如何实现数组的随机排序？" class="headerlink" title="七、 如何实现数组的随机排序？"></a><a name="7">七、 如何实现数组的随机排序？</a></h2><pre><code class="js">//(1)
 var arr = [1,2,3,4,5,6,7,8,9,10];
  arr.sort(function()&#123;
  return Math.random() - 0.5;
@@ -690,7 +694,7 @@ function randomSort(array) &#123;
   return array;
 &#125;
 </code></pre>
-<h2 id="八、伪数组和如何将伪数组转化为真数组"><a href="#八、伪数组和如何将伪数组转化为真数组" class="headerlink" title="八、伪数组和如何将伪数组转化为真数组"></a><a name='8'>八、伪数组和如何将伪数组转化为真数组</a></h2><h4 id="1、伪数组"><a href="#1、伪数组" class="headerlink" title="1、伪数组"></a>1、伪数组</h4><ul>
+<h2 id="八、伪数组和如何将伪数组转化为真数组"><a href="#八、伪数组和如何将伪数组转化为真数组" class="headerlink" title="八、伪数组和如何将伪数组转化为真数组"></a><a name="8">八、伪数组和如何将伪数组转化为真数组</a></h2><h4 id="1、伪数组"><a href="#1、伪数组" class="headerlink" title="1、伪数组"></a>1、伪数组</h4><ul>
 <li>具有 length 属性</li>
 <li>按索引方式存储数据</li>
 <li>不能使用数组的 push.pop 等方法但是可以用forEach等方法对其进行遍历</li>
@@ -707,7 +711,7 @@ function randomSort(array) &#123;
 <li>Objeect.prototype.toString.call(arr)，返回的是Arrary</li>
 <li>Array.isArray（arr）：返回true或false</li>
 </ul>
-<h2 id="九、-原型、原型链、特点？"><a href="#九、-原型、原型链、特点？" class="headerlink" title="九、 原型、原型链、特点？"></a><a name='9'>九、 原型、原型链、特点？</a></h2><ul>
+<h2 id="九、-原型、原型链、特点？"><a href="#九、-原型、原型链、特点？" class="headerlink" title="九、 原型、原型链、特点？"></a><a name="9">九、 原型、原型链、特点？</a></h2><ul>
 <li><strong>原型</strong>：</li>
 </ul>
 <pre><code class="bash">答：
@@ -738,7 +742,7 @@ function randomSort(array) &#123;
 <pre><code class="bash">JavaScript 对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与
 之相关的对象也会继承这一改变。
 </code></pre>
-<h2 id="十、-作用域、作用链？"><a href="#十、-作用域、作用链？" class="headerlink" title="十、 作用域、作用链？"></a><a name='10'>十、 作用域、作用链？</a></h2><h4 id="1、作用域"><a href="#1、作用域" class="headerlink" title="1、作用域"></a>1、作用域</h4><pre><code class="js">就是变量的有效范围。 在一定的空间里可以对数据进行读写操作，这个空间就是数据的作用域
+<h2 id="十、-作用域、作用链？"><a href="#十、-作用域、作用链？" class="headerlink" title="十、 作用域、作用链？"></a><a name="10">十、 作用域、作用链？</a></h2><h4 id="1、作用域"><a href="#1、作用域" class="headerlink" title="1、作用域"></a>1、作用域</h4><pre><code class="js">就是变量的有效范围。 在一定的空间里可以对数据进行读写操作，这个空间就是数据的作用域
 1、全局作用域： 最外层函数定义的变量拥有全局作用域，即对任何内部函数来说，都是可以访问的；
 2、局部作用域： 局部作用域一般只在固定的代码片段内可访问到，而对于函数外部是无法访问的，最常见的例如函数内部。在 ES6 之前，
 只有函数可以划分变量的作用域，所以 在函数的外面无法访问函数内的变量
@@ -767,7 +771,7 @@ function randomSort(array) &#123;
 的声明
 2、with 语句。with 语句会将指定的对象添加到作用域链中
 </code></pre>
-<h2 id="十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"><a href="#十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？" class="headerlink" title="十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"></a><a name='11'>十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？</a></h2><h4 id="1、闭包"><a href="#1、闭包" class="headerlink" title="1、闭包"></a>1、闭包</h4><pre><code class="js">MDN: 闭包（closure）是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合。
+<h2 id="十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"><a href="#十一、-什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？" class="headerlink" title="十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？"></a><a name="11">十一、 什么是闭包呀？它有什么作用？会造成什么问题？在哪些实际场景上有应用呢？</a></h2><h4 id="1、闭包"><a href="#1、闭包" class="headerlink" title="1、闭包"></a>1、闭包</h4><pre><code class="js">MDN: 闭包（closure）是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合。
 我理解的闭包是内层函数引用外层函数变量的集合，也就是闭包是等于内层函数加上外层函数变量，注意内层函数对外层函数的引用(也就是地址)，
 而不是直接取值。
 外层变量会存在堆里面的闭包对象上，闭包对象在作用域对象里面，这就是闭包会泄漏的原因：当外层函数执行完成之后，我们仍能访问到外层的变
@@ -782,7 +786,7 @@ function randomSort(array) &#123;
 防抖、节流
 柯里化
 </code></pre>
-<h2 id="十二、垃圾回收机制、内存泄漏？"><a href="#十二、垃圾回收机制、内存泄漏？" class="headerlink" title="十二、垃圾回收机制、内存泄漏？"></a><a name='12'>十二、垃圾回收机制、内存泄漏？</a></h2><h4 id="1、垃圾回收机制"><a href="#1、垃圾回收机制" class="headerlink" title="1、垃圾回收机制"></a>1、垃圾回收机制</h4><p>内存不在使用时，就会被垃圾回收机制自动回收（js分配资源和回收垃圾都是内部自动完成的）</p>
+<h2 id="十二、垃圾回收机制、内存泄漏？"><a href="#十二、垃圾回收机制、内存泄漏？" class="headerlink" title="十二、垃圾回收机制、内存泄漏？"></a><a name="12">十二、垃圾回收机制、内存泄漏？</a></h2><h4 id="1、垃圾回收机制"><a href="#1、垃圾回收机制" class="headerlink" title="1、垃圾回收机制"></a>1、垃圾回收机制</h4><p>内存不在使用时，就会被垃圾回收机制自动回收（js分配资源和回收垃圾都是内部自动完成的）</p>
 <pre><code class="js">垃圾回收是一种自动的内存管理机制。当计算机上的动态内存不再需要时，就应该予以释放，以让出内存。直白点讲，就是程序是运行在内存里的，
 当声明一个变量、定义一个函数时都会占用内存。内存的容量是有限的，如果变量、函数等只有产生没有消亡的过程，那迟早内存有被完全占用的时
 候。这个时候，不仅自己的程序无法正常运行，连其他程序也会受到影响。好比生物只有出生没有死亡，地球总有被撑爆的一天。所以，在计算机
@@ -840,7 +844,7 @@ foo();
 <li>脱离 DOM 的引用：我们获取一个 DOM 元素的引用，而后面这个元素被删除，由于我们一直保留了对这个元素的引用，所以它也无法被回收。</li>
 <li>闭包</li>
 </ul>
-<h2 id="十三、new-操作符具体干了什么呢？如何实现？"><a href="#十三、new-操作符具体干了什么呢？如何实现？" class="headerlink" title="十三、new 操作符具体干了什么呢？如何实现？"></a><a name='13'>十三、new 操作符具体干了什么呢？如何实现？</a></h2><pre><code class="js">1.创建一个空对象
+<h2 id="十三、new-操作符具体干了什么呢？如何实现？"><a href="#十三、new-操作符具体干了什么呢？如何实现？" class="headerlink" title="十三、new 操作符具体干了什么呢？如何实现？"></a><a name="13">十三、new 操作符具体干了什么呢？如何实现？</a></h2><pre><code class="js">1.创建一个空对象
 2.让this指向这个对象
 3.函数体执行，给this添加属性和方法
 4.返回this
@@ -908,17 +912,17 @@ function objectFactory() &#123;
 // 使用方法
 // objectFactory(构造函数, 初始化参数);
 </code></pre>
-<h2 id="十四、script标签的defer和async-属性"><a href="#十四、script标签的defer和async-属性" class="headerlink" title="十四、script标签的defer和async 属性"></a><a name='14'>十四、script标签的defer和async 属性</a></h2><pre><code class="js">1、js脚本会阻塞DOM解析；
+<h2 id="十四、script标签的defer和async-属性"><a href="#十四、script标签的defer和async-属性" class="headerlink" title="十四、script标签的defer和async 属性"></a><a name="14">十四、script标签的defer和async 属性</a></h2><pre><code class="js">1、js脚本会阻塞DOM解析；
 2、defer和async 属性都会异步加载js 脚本，
 3、defer会在DOMContentLoaded事件触发之前执行脚本，也就是DOM树构建完成之前触发（所有这里做DOM操作时不会引起回流和重绘），
 4、async则是下载完js脚本就直接执行，不管是在哪个时间点，所以不适合做DOM操作，可能会引起回流重绘
 </code></pre>
-<h2 id="十五、-Javascript-中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？"><a href="#十五、-Javascript-中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？" class="headerlink" title="十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？"></a><a name='15'>十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</a></h2><pre><code>hasOwnProperty
+<h2 id="十五、-Javascript-中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？"><a href="#十五、-Javascript-中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？" class="headerlink" title="十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？"></a><a name="15">十五、 Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</a></h2><pre><code>hasOwnProperty
 
 所有继承了 Object 的对象都会继承到 hasOwnProperty 方法。这个方法可以用来检测一个对象是否含有特定的自身属性，和
 in 运算符不同，该方法会忽略掉那些从原型链上继承到的属性。
 </code></pre>
-<h2 id="十六、谈谈对this的理解"><a href="#十六、谈谈对this的理解" class="headerlink" title="十六、谈谈对this的理解"></a><a name='16'>十六、谈谈对this的理解</a></h2><blockquote>
+<h2 id="十六、谈谈对this的理解"><a href="#十六、谈谈对this的理解" class="headerlink" title="十六、谈谈对this的理解"></a><a name="16">十六、谈谈对this的理解</a></h2><blockquote>
 <p>this是执行上下文中的一个属性，它指向最后一次调用这个方法的对象</p>
 </blockquote>
 <ul>
@@ -937,8 +941,8 @@ in 运算符不同，该方法会忽略掉那些从原型链上继承到的属�
 <ul>
 <li>new（构造函数）&gt; bind &gt; call &#x3D; apply &gt; 隐式绑定 &gt; 普通函数的调用</li>
 </ul>
-<h2 id="十七、call、apply、bind？"><a href="#十七、call、apply、bind？" class="headerlink" title="十七、call、apply、bind？"></a><a name='17'>十七、call、apply、bind？</a></h2><p>- </p>
-<h2 id="十八、Array-from"><a href="#十八、Array-from" class="headerlink" title="十八、Array.from"></a><a name='18'>十八、Array.from</a></h2><ul>
+<h2 id="十七、call、apply、bind？"><a href="#十七、call、apply、bind？" class="headerlink" title="十七、call、apply、bind？"></a><a name="17">十七、call、apply、bind？</a></h2><p>- </p>
+<h2 id="十八、Array-from"><a href="#十八、Array-from" class="headerlink" title="十八、Array.from"></a><a name="18">十八、Array.from</a></h2><ul>
 <li>Array.from 可以将一个伪数组转化为真数组</li>
 <li>Array.from对数组进行浅拷贝</li>
 <li>使用值填充数组</li>
@@ -967,7 +971,7 @@ resultB; // =&gt; [&#123;&#125;, &#123;&#125;, &#123;&#125;]
 range(4); // =&gt; [0, 1, 2, 3]
 在 range() 函数中，Array.from() 提供了类似数组的 &#123;length：end&#125; ，以及一个简单地返回当前索引的 map 函数 。这样你就可以生成值范围。
 </code></pre>
-<h2 id="十九、new-Array和Array-of"><a href="#十九、new-Array和Array-of" class="headerlink" title="十九、new Array和Array of"></a><a name='19'>十九、new Array和Array of</a></h2><pre><code class="js">let arr = Array(1, 2, 3, 4)
+<h2 id="十九、new-Array和Array-of"><a href="#十九、new-Array和Array-of" class="headerlink" title="十九、new Array和Array of"></a><a name="19">十九、new Array和Array of</a></h2><pre><code class="js">let arr = Array(1, 2, 3, 4)
 console.log(arr) // 1, 2, 3, 4
 console.log(arr.length) // 4
 
@@ -983,7 +987,7 @@ let arr = Array.of(4)
 console.log(arr) // [4]
 console.log(arr.length) // 1
 </code></pre>
-<h2 id="二十、可选链"><a href="#二十、可选链" class="headerlink" title="二十、可选链 ?."></a><a name='20'>二十、可选链 <code>?.</code></a></h2><p>​	可选链 <code>?.</code> 语法有三种形式：</p>
+<h2 id="二十、可选链"><a href="#二十、可选链" class="headerlink" title="二十、可选链 ?."></a><a name="20">二十、可选链 <code>?.</code></a></h2><p>​	可选链 <code>?.</code> 语法有三种形式：</p>
 <ol>
 <li><p><code>obj?.prop</code> —— 如果 <code>obj</code> 存在则返回 <code>obj.prop</code>，否则返回 <code>undefined</code>。</p>
 </li>
@@ -999,11 +1003,11 @@ alert( user?.address?.street ); // undefined（不报错）
 </code></pre>
 </li>
 </ol>
-<h2 id="二十一、promise-allsettled"><a href="#二十一、promise-allsettled" class="headerlink" title="二十一、promise.allsettled "></a><a name='21'>二十一、promise.allsettled </a></h2><pre><code class="js">Promise.allSettled跟Promise.all类似, 其参数接受一个Promise的数组, 返回一个新的Promise, 唯一的不同在于, 其不会进行短
+<h2 id="二十一、promise-allsettled"><a href="#二十一、promise-allsettled" class="headerlink" title="二十一、promise.allsettled "></a><a name="21">二十一、promise.allsettled </a></h2><pre><code class="js">Promise.allSettled跟Promise.all类似, 其参数接受一个Promise的数组, 返回一个新的Promise, 唯一的不同在于, 其不会进行短
 路, 
 也就是说当Promise全部处理完成后我们可以拿到每个Promise的状态, 而不管其是否处理成功.它返回一个Array的Promise
 </code></pre>
-<h2 id="二十二、array-x3D-vs-array-length-x3D-0"><a href="#二十二、array-x3D-vs-array-length-x3D-0" class="headerlink" title="二十二、array &#x3D; [] vs array.length &#x3D; 0 "></a><a name='22'>二十二、array &#x3D; [] vs array.length &#x3D; 0 </a></h2><pre><code class="js">//array = []
+<h2 id="二十二、array-x3D-vs-array-length-x3D-0"><a href="#二十二、array-x3D-vs-array-length-x3D-0" class="headerlink" title="二十二、array &#x3D; [] vs array.length &#x3D; 0 "></a><a name="22">二十二、array &#x3D; [] vs array.length &#x3D; 0 </a></h2><pre><code class="js">//array = []
 let foo = [&#39;hello&#39;, &#39;world&#39;];
 // Add a reference
 let bar = foo;
@@ -1018,27 +1022,27 @@ foo.length = 0;
 // `bar` is affected
 console.log(bar); // []
 </code></pre>
-<h2 id="二十三、-和-amp-amp-操作符的返回值？"><a href="#二十三、-和-amp-amp-操作符的返回值？" class="headerlink" title="二十三、|| 和 &amp;&amp; 操作符的返回值？ "></a><a name='23'>二十三、|| 和 &amp;&amp; 操作符的返回值？ </a></h2><pre><code class="js">|| 和 &amp;&amp; 首先会对第一个操作数执行条件判断，如果其不是布尔值就先进行 ToBoolean 强制类型转换，然后再执行条件
+<h2 id="二十三、-和-amp-amp-操作符的返回值？"><a href="#二十三、-和-amp-amp-操作符的返回值？" class="headerlink" title="二十三、|| 和 &amp;&amp; 操作符的返回值？ "></a><a name="23">二十三、|| 和 &amp;&amp; 操作符的返回值？ </a></h2><pre><code class="js">|| 和 &amp;&amp; 首先会对第一个操作数执行条件判断，如果其不是布尔值就先进行 ToBoolean 强制类型转换，然后再执行条件
 判断。
 对于 || 来说，如果条件判断结果为 true 就返回第一个操作数的值，如果为 false 就返回第二个操作数的值。
 
 &amp;&amp; 则相反，如果条件判断结果为 true 就返回第二个操作数的值，如果为 false 就返回第一个操作数的值。
 || 和 &amp;&amp; 返回它们其中一个操作数的值，而非条件判断的结果
 </code></pre>
-<h2 id="二十四、为什么需要微任务、宏任务？"><a href="#二十四、为什么需要微任务、宏任务？" class="headerlink" title="二十四、为什么需要微任务、宏任务？ "></a><a name='24'>二十四、为什么需要微任务、宏任务？ </a></h2><ul>
+<h2 id="二十四、为什么需要微任务、宏任务？"><a href="#二十四、为什么需要微任务、宏任务？" class="headerlink" title="二十四、为什么需要微任务、宏任务？ "></a><a name="24">二十四、为什么需要微任务、宏任务？ </a></h2><ul>
 <li>单线程语言，阻塞执行</li>
 <li>JS做的任务分为同步和异步两种，所谓 “异步”，简单说就是一个任务不是连续完成的，先执行第一段，等做好了准备，再回过头执行第二段，第二段也被叫做回调；同步则是连贯完成的。</li>
 <li>常见的宏任务有：script（整体代码）&#x2F;setTimout&#x2F;setInterval&#x2F;setImmediate(node 独有)&#x2F;requestAnimationFrame(浏览器独有)&#x2F;IO&#x2F;UI render（浏览器独有）</li>
 </ul>
-<h2 id="二十五、Promise并发控制"><a href="#二十五、Promise并发控制" class="headerlink" title="二十五、Promise并发控制 "></a><a name='25'>二十五、Promise并发控制 </a></h2><p>利用Promise模拟并发下载:一共有 12个图片，同一时间的并发数不超过4个</p>
+<h2 id="二十五、Promise并发控制"><a href="#二十五、Promise并发控制" class="headerlink" title="二十五、Promise并发控制 "></a><a name="25">二十五、Promise并发控制 </a></h2><p>利用Promise模拟并发下载:一共有 12个图片，同一时间的并发数不超过4个</p>
 <ul>
 <li><p>slice()</p>
 </li>
 <li><p>promise.race()</p>
 </li>
 </ul>
-<h2 id="二十六、构造一个全为0的数组（两种方法）"><a href="#二十六、构造一个全为0的数组（两种方法）" class="headerlink" title="二十六、构造一个全为0的数组（两种方法） "></a><a name='26'>二十六、构造一个全为0的数组（两种方法） </a></h2><p>array.from 和 fill()</p>
-<h2 id="二十七、数组的扁平化以及扁平化数组转化为树状结构数组"><a href="#二十七、数组的扁平化以及扁平化数组转化为树状结构数组" class="headerlink" title="二十七、数组的扁平化以及扁平化数组转化为树状结构数组 "></a><a name='27'>二十七、数组的扁平化以及扁平化数组转化为树状结构数组 </a></h2><h4 id="1、扁平数组转化为树状结构数组"><a href="#1、扁平数组转化为树状结构数组" class="headerlink" title="1、扁平数组转化为树状结构数组:"></a>1、扁平数组转化为树状结构数组:</h4><pre><code class="html">&lt;!DOCTYPE html&gt;
+<h2 id="二十六、构造一个全为0的数组（两种方法）"><a href="#二十六、构造一个全为0的数组（两种方法）" class="headerlink" title="二十六、构造一个全为0的数组（两种方法） "></a><a name="26">二十六、构造一个全为0的数组（两种方法） </a></h2><p>array.from 和 fill()</p>
+<h2 id="二十七、数组的扁平化以及扁平化数组转化为树状结构数组"><a href="#二十七、数组的扁平化以及扁平化数组转化为树状结构数组" class="headerlink" title="二十七、数组的扁平化以及扁平化数组转化为树状结构数组 "></a><a name="27">二十七、数组的扁平化以及扁平化数组转化为树状结构数组 </a></h2><h4 id="1、扁平数组转化为树状结构数组"><a href="#1、扁平数组转化为树状结构数组" class="headerlink" title="1、扁平数组转化为树状结构数组:"></a>1、扁平数组转化为树状结构数组:</h4><pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
@@ -1136,7 +1140,7 @@ while (ary.some(Array.isArray)) &#123;
 ary = [].concat(...ary);
 &#125;
 </code></pre>
-<h2 id="二十八、Blob、ArrayBuffer"><a href="#二十八、Blob、ArrayBuffer" class="headerlink" title="二十八、Blob、ArrayBuffer "></a><a name='28'>二十八、Blob、ArrayBuffer </a></h2><h4 id="Blob"><a href="#Blob" class="headerlink" title="Blob"></a>Blob</h4><p><code>Blob</code> 对象表示一个不可变、原始数据的类文件对象。它的数据可以按文本或二进制的格式进行读取，也可以转换成 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream"><code>ReadableStream</code></a> 来用于数据操作</p>
+<h2 id="二十八、Blob、ArrayBuffer"><a href="#二十八、Blob、ArrayBuffer" class="headerlink" title="二十八、Blob、ArrayBuffer "></a><a name="28">二十八、Blob、ArrayBuffer </a></h2><h4 id="Blob"><a href="#Blob" class="headerlink" title="Blob"></a>Blob</h4><p><code>Blob</code> 对象表示一个不可变、原始数据的类文件对象。它的数据可以按文本或二进制的格式进行读取，也可以转换成 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream"><code>ReadableStream</code></a> 来用于数据操作</p>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob/size"><code>Blob.prototype.size</code></a> 只读</p>
 <ul>
 <li><code>Blob</code> 对象中所包含数据的大小（字节）。</li>
@@ -1148,7 +1152,7 @@ ary = [].concat(...ary);
 <h4 id="ArrayBuffer"><a href="#ArrayBuffer" class="headerlink" title="ArrayBuffer"></a>ArrayBuffer</h4><blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/arraybuffer">https://es6.ruanyifeng.com/#docs/arraybuffer</a></p>
 </blockquote>
-<h2 id="二十九、合并两个数组对象"><a href="#二十九、合并两个数组对象" class="headerlink" title="二十九、合并两个数组对象 "></a><a name='29'>二十九、合并两个数组对象 </a></h2><pre><code class="bash">//实现一个函数，将两个对象数组合并到uuid 上，但首先有uuid 和
+<h2 id="二十九、合并两个数组对象"><a href="#二十九、合并两个数组对象" class="headerlink" title="二十九、合并两个数组对象 "></a><a name="29">二十九、合并两个数组对象 </a></h2><pre><code class="bash">//实现一个函数，将两个对象数组合并到uuid 上，但首先有uuid 和
  // name，second 有 uuid 和 role。对于不存在的属性，填充为空。种类合并后根据uuid。
  //根据id合并两个数组对象
 
@@ -1195,7 +1199,7 @@ ary = [].concat(...ary);
         // &#125;
         // console.log(Fn(arr, arr1))
 </code></pre>
-<h2 id="三十、数组随机排序"><a href="#三十、数组随机排序" class="headerlink" title="三十、数组随机排序 "></a><a name='30'>三十、数组随机排序 </a></h2><pre><code class="js">//1、随机从原数组中抽取一个元素加入到新数组
+<h2 id="三十、数组随机排序"><a href="#三十、数组随机排序" class="headerlink" title="三十、数组随机排序 "></a><a name="30">三十、数组随机排序 </a></h2><pre><code class="js">//1、随机从原数组中抽取一个元素加入到新数组
         const arr1 = [1,2,6,4,5,4,0]
         const newarr = []
         while(arr1.length &gt; 0)&#123;
@@ -1224,13 +1228,13 @@ function randomSort(array) &#123;
 
         console.log(randomSort([1,2,6,8,4,5]))
 </code></pre>
-<h2 id="三十一、如何终止一个forEach"><a href="#三十一、如何终止一个forEach" class="headerlink" title="三十一、如何终止一个forEach "></a><a name='31'>三十一、如何终止一个forEach </a></h2><p>用 break continue 和return都是不能打断一个forEach</p>
+<h2 id="三十一、如何终止一个forEach"><a href="#三十一、如何终止一个forEach" class="headerlink" title="三十一、如何终止一个forEach "></a><a name="31">三十一、如何终止一个forEach </a></h2><p>用 break continue 和return都是不能打断一个forEach</p>
 <p>解决方法：</p>
 <ul>
 <li>用try–catch 结合throw 一个错误</li>
 <li>用其他方法 如some 和every</li>
 </ul>
-<h2 id="三十二、JavaScript传参的方式"><a href="#三十二、JavaScript传参的方式" class="headerlink" title="三十二、JavaScript传参的方式 "></a><a name='32'>三十二、JavaScript传参的方式 </a></h2><ul>
+<h2 id="三十二、JavaScript传参的方式"><a href="#三十二、JavaScript传参的方式" class="headerlink" title="三十二、JavaScript传参的方式 "></a><a name="32">三十二、JavaScript传参的方式 </a></h2><ul>
 <li><p><strong>cookie传参</strong></p>
 <ul>
 <li>可以<code>doucment.cookie</code>来进行cookie的读取或者设置、删除等操作</li>
@@ -1252,10 +1256,10 @@ var x = document.cookie;
 <li><p><strong>localstorage或者sessionstorage传参</strong></p>
 </li>
 </ul>
-<h2 id="三十三、0-1-0-2-x3D-x3D-x3D-0-3-嘛？为什么？"><a href="#三十三、0-1-0-2-x3D-x3D-x3D-0-3-嘛？为什么？" class="headerlink" title="三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？"></a><a name='33'>三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？</a></h2><pre><code class="js">在两数相加时，会先转换成二进制，0.1 和 0.2 转换成二进制的时候尾数会发生无限循环，然后进行对阶运算，JS 引擎对二进制进行截断
+<h2 id="三十三、0-1-0-2-x3D-x3D-x3D-0-3-嘛？为什么？"><a href="#三十三、0-1-0-2-x3D-x3D-x3D-0-3-嘛？为什么？" class="headerlink" title="三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？"></a><a name="33">三十三、0.1 + 0.2 &#x3D;&#x3D;&#x3D; 0.3 嘛？为什么？</a></h2><pre><code class="js">在两数相加时，会先转换成二进制，0.1 和 0.2 转换成二进制的时候尾数会发生无限循环，然后进行对阶运算，JS 引擎对二进制进行截断
 所以造成精度丢失
 </code></pre>
-<h2 id="三十四、javascript-创建对象的几种方式？"><a href="#三十四、javascript-创建对象的几种方式？" class="headerlink" title=" 三十四、javascript 创建对象的几种方式？"></a><a name='35'> 三十四、javascript 创建对象的几种方式？</a></h2>
+<h2 id="三十四、javascript-创建对象的几种方式？"><a href="#三十四、javascript-创建对象的几种方式？" class="headerlink" title=" 三十四、javascript 创建对象的几种方式？"></a><a name="35"> 三十四、javascript 创建对象的几种方式？</a></h2>
   </div>
   <div id=""></div>
 </div>
