@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理-前端学习</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="前端笔记,浏览器,JavaScript执行原理,">
+<meta name="description" content="采用简约大方的扁平化Hexo-Quiet主题">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="szgy" type="application/atom+xml">
+</head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										首页
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										档案
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										文章分类
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										友情链接
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										关于我
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>szgy</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <a href="/archives">档案</a>
+        </li>
+        
+        <li>
+            <a href="/categories">文章分类</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href="/links">友情链接</a>
+        </li>
+        
+        <li>
+            <a href="/about">关于我</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/szgyFE/Front-end-Interview-Notes">
+            <img src="/image/favicon.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img"
+    style="background: url('https://api.ixiaowai.cn/gqapi/gqapi.php')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/前端笔记">前端笔记</a></li>
+            
+            <li><a href="/tags/浏览器">浏览器</a></li>
+            
+            <li><a href="/tags/JavaScript执行原理">JavaScript执行原理</a></li>
+            
+            
+        </ul>
+        
+        <h1>深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                        <path
+                            d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                            p-id="2902" fill="#ffffff"></path>
+                    </svg>
+                    
+                <span class="post-header-info-author-text"> <a target="_blank" rel="noopener" href="https://github.com/szgyFE/Front-end-Interview-Notes">szgy</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/前端专题深入系列/" target="_blank" >前端专题深入系列</a>
+                    
+                </div>
+                <p>2021-12-03 20:33:36</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <h2 id="一、网页的解析过程"><a href="#一、网页的解析过程" class="headerlink" title="一、网页的解析过程"></a>一、网页的解析过程</h2><h4 id="1、浏览器输入一个url（域名）到页面展示的过程"><a href="#1、浏览器输入一个url（域名）到页面展示的过程" class="headerlink" title="1、浏览器输入一个url（域名）到页面展示的过程"></a>1、浏览器输入一个<code>url</code>（域名）到页面展示的过程</h4><ul>
+<li><p>请求过程:</p>
+<p>①输入域名 （检查语法错误，看缓存）</p>
+<p>②看ip缓存，没有缓存就经过<code>DNS</code>解析转化为<code>ip地址</code>（如：192.168.11.97）</p>
+<p>③三次握手，然后根据<code>IP地址</code>找到服务器（电脑主机）</p>
+<p>④服务主机将资源返回给浏览器，浏览器再对资源进行解析</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="./">请求详情在这里——url地址输入的过程</a></p>
+</blockquote>
+<ul>
+<li><p>解析过程</p>
+<img src="/深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理/浏览器.jpg" style="zoom: 80%;" />
+
+<ul>
+<li><p><code>css和html解析</code></p>
+<p>①拿到<code>html</code>文件之后，从上到下解析<code>html</code>，生成<code>html</code>结构的<code>DOM树</code></p>
+<p>②遇到<code>link</code>标签后，下载<code>ccs</code>文件（不会阻塞向下解析<code>html</code>）,解析<code>css</code>生成<code>css规则树</code>,称为<code>CSSOM（Css Object Model）</code></p>
+<p>③当有了<code>DOM树</code>和<code>CSSOM树</code>后,就将两个结合起来构建<code>渲染树（Render Tree）</code>  <code>css</code>中有<code>display：none</code>的元素不会出现在渲染树中</p>
+<p>④布局（layout）：布局是计算并确定呈现树中所有节点的宽高和位置信息，</p>
+<p>⑤绘制（painting）：将每个节点绘制到屏幕上，浏览器将布局阶段计算的每个frame转化为屏幕上实际的像素点。</p>
+</li>
+<li><p>script元素的解析</p>
+<p>①在解析<code>html</code>的过程中，遇到script元素后，下载script脚本文件，并会阻塞DOM树的生成</p>
+<p>②停止DOM树的构建，下载js代码并执行js脚本</p>
+<p>③等到js脚本执行完毕后，继续解析HTML结构，继续构建DOM树</p>
+</li>
+<li><p>解析script元素阻塞DOM树构建的原因：</p>
+<ul>
+<li><p>js可以操作DOM，等到构建好DOM树并且渲染好了再执行js代码，如果js代码里面有操作DOM的代码，那么就会造成回流和重绘，影响页面的性能</p>
+</li>
+<li><p>所以再遇到script元素时，优先下载和执行js代码，再构建继续DOM树</p>
+</li>
+</ul>
+<p>	</p>
+</li>
+<li><p>script解析机制问题</p>
+<p>现实开发中，脚本比<code>html</code>更重，处理时间长 如果造成页面阻塞，在下载并执行完js脚本之前，用户什么都看不到</p>
+</li>
+<li><p><code>defer</code>和<code>async</code></p>
+<p>为了解决以上问题，script提供了<code>defer</code>和<code>async</code>这两个属性</p>
+<ul>
+<li><p>defer属性</p>
+<ul>
+<li>脚本由浏览器来下载，并且不会阻塞DOM树的生成</li>
+<li>如果脚本提前被下载完，它会等待DOM树的构建，</li>
+<li>在<code>DOMContentLoaded</code>事件触发(<code>dom树</code>构建完成)之前执行defer代码（防止js代码中有操作DOM的代码，引发回流、重绘）(所以在defer代码里面可以操作DOM)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>defer的js脚本会上到下顺序执行</p>
+</li>
+<li><p><code>async</code>属性</p>
+<ul>
+<li>不会阻塞DOM树<ul>
+<li>完全独立，下载完就执行，不能保证顺序，自己下载完就执行，不会等其他<code>async</code>代码</li>
+</ul>
+</li>
+<li>不能保证在<code>DOMContentLoaded</code>事件的前面触发，所以应慎重操作DOM</li>
+</ul>
+</li>
+</ul>
+<h4 id="2、回流"><a href="#2、回流" class="headerlink" title="2、回流"></a>2、回流</h4><ul>
+<li><p>第一次确定节点的位置信息叫做布局，当节点位置发生改变之后再重新计算节点位置信息叫做回流（<code>重排reflow</code>）</p>
+</li>
+<li><p>回流会引起重绘</p>
+</li>
+<li><p>引起回流的情况:</p>
+<ul>
+<li>DOM结构发生改变</li>
+<li>布局改变</li>
+<li>浏览器窗口改变</li>
+<li>调用了<code>getComputedStyle</code>方法获取尺寸位置信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、重绘"><a href="#3、重绘" class="headerlink" title="3、重绘"></a>3、重绘</h4><ul>
+<li><p>回流一定引起重绘</p>
+</li>
+<li><p>第一次渲染叫做绘制，之后的重新渲染叫做重绘</p>
+</li>
+<li><p>引起重绘的情况：</p>
+<ul>
+<li>修改背景颜色、文字颜色等样式等不影响其他元素的情况</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、注意"><a href="#3、注意" class="headerlink" title="3、注意"></a>3、注意</h4><p>回流是一件很消耗浏览器性能的事情，尽量避免回流：</p>
+<ul>
+<li>修改样式尽量选择一次性修改</li>
+<li>避免频繁操作DOM</li>
+<li>避免通过<code>getcomputedStyle</code>获取尺寸和位置等信息</li>
+<li>可以对某些元素使用<code>postion</code>的<code>fixed</code>使它脱标(会引起回流，但是对其他元素没有影响，开销较小)</li>
+</ul>
+<hr>
+
+<h2 id="二、页面合成图层"><a href="#二、页面合成图层" class="headerlink" title="二、页面合成图层"></a>二、页面合成图层</h2><h4 id="1、特殊解析：composite合成"><a href="#1、特殊解析：composite合成" class="headerlink" title="1、特殊解析：composite合成"></a>1、特殊解析：composite合成</h4><p>​	这是一种浏览器的优化手段</p>
+<ul>
+<li>绘制过程中，标准流的内容会被绘制在同一图层内</li>
+<li>而一些特殊的属性，会创建一个新的合成层，每个<strong>合成层都是单独渲染的</strong>（浏览器检查上选择更多按键选择layer可以查看）<ul>
+<li><code>3D</code> <code>tansform</code></li>
+<li><code>video、canvas、iframe</code></li>
+<li><code>opacity+动画</code></li>
+<li><code>position：fixed</code></li>
+<li><code>animation或者transform设置了opacity、tansform</code></li>
+<li><code>will-change：表示告诉浏览器将要做什么</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>⚠注意</strong>：分层确实能提高性能，但是每创建一个分层，浏览器就会消耗内存来管理分层，因此不能过度使用</p>
+<hr>
+
+<h2 id="三、JavaScript运行原理"><a href="#三、JavaScript运行原理" class="headerlink" title="三、JavaScript运行原理"></a>三、JavaScript运行原理</h2><h4 id="1、浏览器内核"><a href="#1、浏览器内核" class="headerlink" title="1、浏览器内核"></a>1、浏览器内核</h4><ul>
+<li><code>webCore</code>：解析、布局、渲染</li>
+<li><code>JavaScriptCore</code>：解析执行js代码</li>
+</ul>
+<h4 id="2、V8引擎"><a href="#2、V8引擎" class="headerlink" title="2、V8引擎"></a>2、<code>V8</code>引擎</h4><p>源代码 ——解析成语法树 ——转化成字节码——二进制代码</p>
+<img src="./深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理/v8引擎.jpg" style="zoom:50%;" />
+
+<ul>
+<li><p>Parse</p>
+<p>将源代码解析为语法树</p>
+</li>
+<li><p>Ignition</p>
+<p>这是一个解释器，将语法树转化成字节码</p>
+<ul>
+<li>函数值只用一次，就经过Ignition解释执行为字节码</li>
+</ul>
+</li>
+<li><p><code>TurboFan</code></p>
+<p>这是一个编译器，可以将字节码编译成<code>cpu</code>能直接执行的机器码</p>
+<ul>
+<li>一个函数被多次调用，会被标记为热点函数，经过<code>TurboFan</code>转化为机器码，提高代码的执行性能</li>
+<li>如果函数在执行过程中类型发生改变，优化的机器码不能处理，也会转成字节码.</li>
+</ul>
+</li>
+<li><p>总体编译过程（编译原理）</p>
+<p>①词法分析（识别关键字、字母、数字等单词）</p>
+<p>②语法分析（单词组成语法树）</p>
+<p>③语义分析（检查语义）</p>
+<p>④中间代码生成（字节码在这生成）</p>
+<p>⑤代码优化（优化代码、节省空间、时间、如删除空格等）</p>
+<p>⑥目标代码生成（转化为绝对机器指令）</p>
+</li>
+</ul>
+
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+
+    
+    <a href="/2021/11/03/HTML%E3%80%81CSS%E4%B8%93%E9%A2%98/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>HTML、CSS学习笔记及面试题</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2023 By szgy. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/szgyFE/Front-end-Interview-Notes">
+			<img src="/image/favicon.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+

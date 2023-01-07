@@ -6,7 +6,7 @@
   <link href="https://szgyfe.github.io/atom.xml" rel="self"/>
   
   <link href="https://szgyfe.github.io/"/>
-  <updated>2023-01-06T03:37:12.210Z</updated>
+  <updated>2023-01-06T08:39:08.794Z</updated>
   <id>https://szgyfe.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理</title>
+    <link href="https://szgyfe.github.io/2021/12/03/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E2%80%94%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B%E3%80%81composite%E5%90%88%E6%88%90%E4%BB%A5%E5%8F%8Ajs%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
+    <id>https://szgyfe.github.io/2021/12/03/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E2%80%94%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B%E3%80%81composite%E5%90%88%E6%88%90%E4%BB%A5%E5%8F%8Ajs%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/</id>
+    <published>2021-12-03T12:33:36.000Z</published>
+    <updated>2023-01-06T08:39:08.794Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、网页的解析过程"><a href="#一、网页的解析过程" class="headerlink" title="一、网页的解析过程"></a>一、网页的解析过程</h2><h4 id="1、浏览器输入一个url（域名）到页面展示的过程"><a href="#1、浏览器输入一个url（域名）到页面展示的过程" class="headerlink" title="1、浏览器输入一个url（域名）到页面展示的过程"></a>1、浏览器输入一个<code>url</code>（域名）到页面展示的过程</h4><ul><li><p>请求过程:</p><p>①输入域名 （检查语法错误，看缓存）</p><p>②看ip缓存，没有缓存就经过<code>DNS</code>解析转化为<code>ip地址</code>（如：192.168.11.97）</p><p>③三次握手，然后根据<code>IP地址</code>找到服务器（电脑主机）</p><p>④服务主机将资源返回给浏览器，浏览器再对资源进行解析</p></li></ul><blockquote><p><a href="./">请求详情在这里——url地址输入的过程</a></p></blockquote><ul><li><p>解析过程</p><img src="/深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理/浏览器.jpg" style="zoom: 80%;" /><ul><li><p><code>css和html解析</code></p><p>①拿到<code>html</code>文件之后，从上到下解析<code>html</code>，生成<code>html</code>结构的<code>DOM树</code></p><p>②遇到<code>link</code>标签后，下载<code>ccs</code>文件（不会阻塞向下解析<code>html</code>）,解析<code>css</code>生成<code>css规则树</code>,称为<code>CSSOM（Css Object Model）</code></p><p>③当有了<code>DOM树</code>和<code>CSSOM树</code>后,就将两个结合起来构建<code>渲染树（Render Tree）</code>  <code>css</code>中有<code>display：none</code>的元素不会出现在渲染树中</p><p>④布局（layout）：布局是计算并确定呈现树中所有节点的宽高和位置信息，</p><p>⑤绘制（painting）：将每个节点绘制到屏幕上，浏览器将布局阶段计算的每个frame转化为屏幕上实际的像素点。</p></li><li><p>script元素的解析</p><p>①在解析<code>html</code>的过程中，遇到script元素后，下载script脚本文件，并会阻塞DOM树的生成</p><p>②停止DOM树的构建，下载js代码并执行js脚本</p><p>③等到js脚本执行完毕后，继续解析HTML结构，继续构建DOM树</p></li><li><p>解析script元素阻塞DOM树构建的原因：</p><ul><li><p>js可以操作DOM，等到构建好DOM树并且渲染好了再执行js代码，如果js代码里面有操作DOM的代码，那么就会造成回流和重绘，影响页面的性能</p></li><li><p>所以再遇到script元素时，优先下载和执行js代码，再构建继续DOM树</p></li></ul><p></p></li><li><p>script解析机制问题</p><p>现实开发中，脚本比<code>html</code>更重，处理时间长 如果造成页面阻塞，在下载并执行完js脚本之前，用户什么都看不到</p></li><li><p><code>defer</code>和<code>async</code></p><p>为了解决以上问题，script提供了<code>defer</code>和<code>async</code>这两个属性</p><ul><li><p>defer属性</p><ul><li>脚本由浏览器来下载，并且不会阻塞DOM树的生成</li><li>如果脚本提前被下载完，它会等待DOM树的构建，</li><li>在<code>DOMContentLoaded</code>事件触发(<code>dom树</code>构建完成)之前执行defer代码（防止js代码中有操作DOM的代码，引发回流、重绘）(所以在defer代码里面可以操作DOM)</li></ul></li></ul></li></ul></li><li><p>defer的js脚本会上到下顺序执行</p></li><li><p><code>async</code>属性</p><ul><li>不会阻塞DOM树<ul><li>完全独立，下载完就执行，不能保证顺序，自己下载完就执行，不会等其他<code>async</code>代码</li></ul></li><li>不能保证在<code>DOMContentLoaded</code>事件的前面触发，所以应慎重操作DOM</li></ul></li></ul><h4 id="2、回流"><a href="#2、回流" class="headerlink" title="2、回流"></a>2、回流</h4><ul><li><p>第一次确定节点的位置信息叫做布局，当节点位置发生改变之后再重新计算节点位置信息叫做回流（<code>重排reflow</code>）</p></li><li><p>回流会引起重绘</p></li><li><p>引起回流的情况:</p><ul><li>DOM结构发生改变</li><li>布局改变</li><li>浏览器窗口改变</li><li>调用了<code>getComputedStyle</code>方法获取尺寸位置信息</li></ul></li></ul><h4 id="3、重绘"><a href="#3、重绘" class="headerlink" title="3、重绘"></a>3、重绘</h4><ul><li><p>回流一定引起重绘</p></li><li><p>第一次渲染叫做绘制，之后的重新渲染叫做重绘</p></li><li><p>引起重绘的情况：</p><ul><li>修改背景颜色、文字颜色等样式等不影响其他元素的情况</li></ul></li></ul><h4 id="3、注意"><a href="#3、注意" class="headerlink" title="3、注意"></a>3、注意</h4><p>回流是一件很消耗浏览器性能的事情，尽量避免回流：</p><ul><li>修改样式尽量选择一次性修改</li><li>避免频繁操作DOM</li><li>避免通过<code>getcomputedStyle</code>获取尺寸和位置等信息</li><li>可以对某些元素使用<code>postion</code>的<code>fixed</code>使它脱标(会引起回流，但是对其他元素没有影响，开销较小)</li></ul><hr><h2 id="二、页面合成图层"><a href="#二、页面合成图层" class="headerlink" title="二、页面合成图层"></a>二、页面合成图层</h2><h4 id="1、特殊解析：composite合成"><a href="#1、特殊解析：composite合成" class="headerlink" title="1、特殊解析：composite合成"></a>1、特殊解析：composite合成</h4><p>​这是一种浏览器的优化手段</p><ul><li>绘制过程中，标准流的内容会被绘制在同一图层内</li><li>而一些特殊的属性，会创建一个新的合成层，每个<strong>合成层都是单独渲染的</strong>（浏览器检查上选择更多按键选择layer可以查看）<ul><li><code>3D</code> <code>tansform</code></li><li><code>video、canvas、iframe</code></li><li><code>opacity+动画</code></li><li><code>position：fixed</code></li><li><code>animation或者transform设置了opacity、tansform</code></li><li><code>will-change：表示告诉浏览器将要做什么</code></li></ul></li></ul><p><strong>⚠注意</strong>：分层确实能提高性能，但是每创建一个分层，浏览器就会消耗内存来管理分层，因此不能过度使用</p><hr><h2 id="三、JavaScript运行原理"><a href="#三、JavaScript运行原理" class="headerlink" title="三、JavaScript运行原理"></a>三、JavaScript运行原理</h2><h4 id="1、浏览器内核"><a href="#1、浏览器内核" class="headerlink" title="1、浏览器内核"></a>1、浏览器内核</h4><ul><li><code>webCore</code>：解析、布局、渲染</li><li><code>JavaScriptCore</code>：解析执行js代码</li></ul><h4 id="2、V8引擎"><a href="#2、V8引擎" class="headerlink" title="2、V8引擎"></a>2、<code>V8</code>引擎</h4><p>源代码 ——解析成语法树 ——转化成字节码——二进制代码</p><img src="./深入学习系列—浏览器的渲染过程、composite合成以及js的运行原理/v8引擎.jpg" style="zoom:50%;" /><ul><li><p>Parse</p><p>将源代码解析为语法树</p></li><li><p>Ignition</p><p>这是一个解释器，将语法树转化成字节码</p><ul><li>函数值只用一次，就经过Ignition解释执行为字节码</li></ul></li><li><p><code>TurboFan</code></p><p>这是一个编译器，可以将字节码编译成<code>cpu</code>能直接执行的机器码</p><ul><li>一个函数被多次调用，会被标记为热点函数，经过<code>TurboFan</code>转化为机器码，提高代码的执行性能</li><li>如果函数在执行过程中类型发生改变，优化的机器码不能处理，也会转成字节码.</li></ul></li><li><p>总体编译过程（编译原理）</p><p>①词法分析（识别关键字、字母、数字等单词）</p><p>②语法分析（单词组成语法树）</p><p>③语义分析（检查语义）</p><p>④中间代码生成（字节码在这生成）</p><p>⑤代码优化（优化代码、节省空间、时间、如删除空格等）</p><p>⑥目标代码生成（转化为绝对机器指令）</p></li></ul>]]></content>
+    
+    
+    <summary type="html">采用简约大方的扁平化Hexo-Quiet主题</summary>
+    
+    
+    
+    <category term="前端专题深入系列" scheme="https://szgyfe.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B8%93%E9%A2%98%E6%B7%B1%E5%85%A5%E7%B3%BB%E5%88%97/"/>
+    
+    
+    <category term="前端笔记" scheme="https://szgyfe.github.io/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="浏览器" scheme="https://szgyfe.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="JavaScript执行原理" scheme="https://szgyfe.github.io/tags/JavaScript%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML、CSS学习笔记及面试题</title>
