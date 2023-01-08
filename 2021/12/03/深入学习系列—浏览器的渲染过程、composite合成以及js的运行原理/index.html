@@ -479,23 +479,23 @@
 <img src="/2021/12/03/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E2%80%94%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B%E3%80%81composite%E5%90%88%E6%88%90%E4%BB%A5%E5%8F%8Ajs%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/v8引擎.jpg" style="zoom:50%;">
 
 <ul>
-<li><p>Parse</p>
+<li><p><strong>Parse</strong></p>
 <p>将源代码解析为语法树</p>
 </li>
-<li><p>Ignition</p>
+<li><p><strong>Ignition</strong></p>
 <p>这是一个解释器，将语法树转化成字节码</p>
 <ul>
 <li>函数值只用一次，就经过Ignition解释执行为字节码</li>
 </ul>
 </li>
-<li><p><code>TurboFan</code></p>
+<li><p><strong>TurboFan</strong></p>
 <p>这是一个编译器，可以将字节码编译成<code>cpu</code>能直接执行的机器码</p>
 <ul>
 <li>一个函数被多次调用，会被标记为热点函数，经过<code>TurboFan</code>转化为机器码，提高代码的执行性能</li>
 <li>如果函数在执行过程中类型发生改变，优化的机器码不能处理，也会转成字节码.</li>
 </ul>
 </li>
-<li><p>总体编译过程（编译原理）</p>
+<li><p><strong>总体编译过程（编译原理）</strong></p>
 <p>①词法分析（识别关键字、字母、数字等单词）</p>
 <p>②语法分析（单词组成语法树）</p>
 <p>③语义分析（检查语义）</p>
