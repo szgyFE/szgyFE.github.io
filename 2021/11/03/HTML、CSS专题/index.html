@@ -359,17 +359,22 @@
 <li>position的值为absolute或fixed</li>
 </ul>
 <h4 id="3、应用场景"><a href="#3、应用场景" class="headerlink" title="3、应用场景"></a>3、应用场景</h4><ul>
-<li><strong>防止外边距重叠</strong></li>
-<li>问题：当两个上下的盒子都设置了外边距margin时，就会出现外边距重叠的问题，他们两个之间的margin距离会以大的那个大的margin为准（而不是两个margin值相加）<ul>
-<li>解决方法：给其中一个盒子包在一个BFC盒子里面（给这个盒子设置<code>overflow:hidden</code>），这样他们属于两个BFC，会互不影响</li>
+<li><p><strong>防止外边距重叠</strong></p>
+<ul>
+<li><p>问题：当两个上下的盒子都设置了外边距margin时，就会出现外边距重叠的问题，他们两个之间的margin距离会以大的那个大的margin为准（而不是两个margin值相加）</p>
+</li>
+<li><p>解决方法：给其中一个盒子包在一个BFC盒子里面（给这个盒子设置<code>overflow:hidden</code>），这样他们属于两个BFC，会互不影响</p>
+</li>
 </ul>
 </li>
-<li><strong>使用Float脱离文档流，高度塌陷的</strong><ul>
+<li><p><strong>使用Float脱离文档流，高度塌陷的</strong></p>
+<ul>
 <li>问题：内容浮动父盒子高度会消失</li>
 <li>解决方法：给父盒子触发BFC，这样他们属于两个BFC，会互不影响</li>
 </ul>
 </li>
-<li><strong>两栏布局覆盖</strong><ul>
+<li><p><strong>两栏布局覆盖</strong></p>
+<ul>
 <li>问题：两栏布局中，给前一个盒子设置浮动，后一个盒子不设置浮动，那么前一个盒子会因为脱离文档流覆盖在后一个盒子的上方</li>
 <li>解决方法：可以把第二个盒子触发BFC</li>
 </ul>
